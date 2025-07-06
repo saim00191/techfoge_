@@ -329,7 +329,7 @@
 import { useState, useEffect, useRef } from "react"
 import type React from "react"
 
-import Logo from "../images/logo.png"
+import Logo from "../images/logomain.png"
 import Image from "next/image"
 import Link from "next/link"
 import { Poppins } from "next/font/google"
@@ -347,6 +347,7 @@ import {
   FaHeadset,
   FaChevronDown,
 } from "react-icons/fa"
+import { usePathname } from "next/navigation"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -354,6 +355,13 @@ const poppins = Poppins({
 })
 
 export default function Header() {
+
+  
+    const pathname = usePathname() 
+    const isAdminRoute = pathname.startsWith("/admin") 
+  
+    if (isAdminRoute) return null 
+
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)

@@ -12,8 +12,16 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa"
-
+import { usePathname } from "next/navigation"
 export default function FuturisticFooter() {
+
+
+  const pathname = usePathname() 
+  const isAdminRoute = pathname.startsWith("/admin") 
+
+  if (isAdminRoute) return null 
+
+
   const [isVisible, setIsVisible] = useState(false)
   const footerRef = useRef<HTMLElement>(null)
 
@@ -38,7 +46,7 @@ export default function FuturisticFooter() {
     { name: "About", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
-    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
   ]
 
   const quickLinks = [

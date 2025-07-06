@@ -1,4 +1,5 @@
 "use client"
+
 import { Poppins } from "next/font/google"
 
 const poppins = Poppins({
@@ -31,18 +32,18 @@ export default function HowToStartSection() {
   ]
 
   return (
-    <section className={`bg-[#020A15] py-16 px-4 sm:py-20 lg:py-28 w-full relative overflow-hidden ${poppins.className}`}>
+    <section
+      className={`bg-[#020A15] py-16 px-4 sm:py-20 lg:py-28 w-full relative overflow-hidden ${poppins.className}`}
+    >
       <div className="mx-auto max-w-7xl w-full">
         {/* Header */}
         <div className="text-center flex flex-col mb-16 lg:mb-20 px-4">
           <div className="relative inline-block mb-8">
             <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight">
-               How to Start
+              How to Start
             </h2>
             {/* Consciousness wave */}
-            <div
-              className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-2000 `}
-            >
+            <div className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-2000 `}>
               <svg width="320" height="20" viewBox="0 0 320 20">
                 <path
                   d="M 0 10 Q 80 5 160 10 T 320 10"
@@ -60,7 +61,7 @@ export default function HowToStartSection() {
               </svg>
             </div>
           </div>
-          
+
           <div className="relative inline-block">
             <p className="text-xl sm:text-2xl lg:text-3xl text-[#00D1FF] font-medium relative z-10">Easy Process</p>
             <div className="absolute inset-0 text-[#00D1FF] blur-sm opacity-50 text-xl sm:text-2xl lg:text-3xl font-medium">
@@ -85,6 +86,8 @@ export default function HowToStartSection() {
                   </span>
                   <div className="absolute inset-2 rounded-xl bg-gradient-to-br from-[#00D1FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 </div>
+
+                {/* Desktop horizontal lines - show on lg and above */}
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 left-full w-6 xl:w-8 h-0.5 transform -translate-y-1/2 ml-4 xl:ml-6">
                     <div className="w-full h-full bg-gradient-to-r from-[#00D1FF]/40 via-[#00D1FF]/20 to-transparent"></div>
@@ -103,9 +106,9 @@ export default function HowToStartSection() {
                 </p>
               </div>
 
-              {/* Mobile line */}
+              {/* Mobile vertical lines - show only on sm and below, hide on md and above */}
               {index < steps.length - 1 && (
-                <div className="lg:hidden mt-8 mb-4 flex flex-col items-center">
+                <div className="sm:hidden mt-8 mb-4 flex flex-col items-center">
                   <div className="w-0.5 h-8 bg-gradient-to-b from-[#00D1FF]/50 to-[#00D1FF]/20">
                     <div className="w-full h-full bg-gradient-to-b from-[#00D1FF] to-[#00D1FF]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>

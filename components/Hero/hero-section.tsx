@@ -40,11 +40,11 @@ export default function ProfessionalHeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lgl:px-8">
         <div className="py-12 flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
+          <div className="grid grid-cols-1 lgl:grid-cols-12 gap-8 lgl:gap-12 items-center w-full">
             {/* Left Column - Content */}
-            <div className="lg:col-span-7 text-center lg:text-left space-y-8">
+            <div className="lgl:col-span-7 text-center lgl:text-left space-y-8">
               {/* Badge */}
               <div
                 className={`transform transition-all duration-400 ease-out ${
@@ -68,7 +68,7 @@ export default function ProfessionalHeroSection() {
                   transitionDelay: "100ms",
                 }}
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lgl:text-7xl font-bold text-white leading-tight tracking-tight">
                   <span className="block">Digital Solutions</span>
                   <span className="block">That Drive</span>
                   <span className="block bg-gradient-to-r from-[#00D1FF] via-white to-[#00D1FF] bg-clip-text text-transparent">
@@ -87,7 +87,7 @@ export default function ProfessionalHeroSection() {
                   transitionDelay: "200ms",
                 }}
               >
-                <p className="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl mx-auto lgl:mx-0">
                   We partner with forward-thinking businesses to create innovative digital experiences that accelerate
                   growth and transform industries.
                 </p>
@@ -95,7 +95,7 @@ export default function ProfessionalHeroSection() {
 
               {/* CTA Section */}
               <div
-                className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transform transition-all duration-500 ease-out ${
+                className={`flex flex-col sm:flex-row gap-4 justify-center lgl:justify-start transform transition-all duration-500 ease-out ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
                 style={{
@@ -110,7 +110,7 @@ export default function ProfessionalHeroSection() {
                   aria-label="Get started with our services"
                 >
                   <span className="relative z-10 flex items-center justify-center space-x-2">
-                    <span>Get Started</span>
+                    <span>Get In Touch</span>
                     <svg
                       className="w-5 h-5 transition-transform duration-300 ease-out group-hover:translate-x-1"
                       fill="none"
@@ -126,30 +126,7 @@ export default function ProfessionalHeroSection() {
                   <div className="absolute inset-0 rounded-full bg-[#00D1FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out blur-lg -z-10" />
                 </button>
 
-                {/* Secondary CTA */}
-                <button
-                  className="group px-8 py-4 bg-transparent border-2 border-white/20 text-white font-medium text-lg rounded-full transition-all duration-300 ease-out hover:border-[#00D1FF] hover:text-[#00D1FF] hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00D1FF]/50 focus:ring-offset-2 focus:ring-offset-[#020A15]"
-                  style={{ willChange: "transform, border-color, color" }}
-                  aria-label="View our portfolio"
-                >
-                  <span className="flex items-center justify-center space-x-2">
-                    <span>View Portfolio</span>
-                    <svg
-                      className="w-5 h-5 transition-transform duration-300 ease-out group-hover:scale-110"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </span>
-                </button>
+              
               </div>
 
               {/* Stats */}
@@ -167,7 +144,7 @@ export default function ProfessionalHeroSection() {
                   { number: "99%", label: "Success Rate" },
                   { number: "24/7", label: "Support" },
                 ].map((stat, index) => (
-                  <div key={index} className="text-center lg:text-left group">
+                  <div key={index} className="text-center lgl:text-left group">
                     <div className="text-2xl sm:text-3xl font-bold text-[#00D1FF] mb-1 transition-transform duration-300 ease-out group-hover:scale-110">
                       {stat.number}
                     </div>
@@ -178,7 +155,7 @@ export default function ProfessionalHeroSection() {
             </div>
 
             {/* Right Column - Visual */}
-            <div className="lg:col-span-5 flex items-center justify-center">
+            <div className="lgl:col-span-5 flex items-center justify-center">
               <div
                 className={`relative w-full max-w-md transform transition-all duration-600 ease-out ${
                   isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
