@@ -15,7 +15,7 @@ export const CategoryCard = ({
   return (
     <div
       key={category.id}
-      ref={(el) => (sectionRefs.current[category.id] = el)}
+      ref={el => { sectionRefs.current[category.id] = el; }}
       data-section={category.id}
       className={`transition-all duration-1000 ease-out ${
         visibleSections.has(category.id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
