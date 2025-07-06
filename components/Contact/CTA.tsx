@@ -21,7 +21,7 @@ export const FooterCTA = ({ visibleSections, sectionRefs }: FooterCTAProps) => {
               <Zap size={24} className="text-[#00D1FF]" />
             </div>
             <p className="text-lg text-[#D1D5DB] mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied clients who've transformed their ideas into reality with Tech Foge.
+              Join hundreds of satisfied clients who&apos;ve transformed their ideas into reality with Tech Foge.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-[#00D1FF] text-[#020A15] px-8 py-3 rounded-lg font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all duration-300">

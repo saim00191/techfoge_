@@ -27,7 +27,7 @@ export const ContactForm = ({
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Send us a Message</h2>
             <p className="text-lg text-[#D1D5DB] max-w-2xl mx-auto">
-              Ready to start your next project? Fill out the form below and we'll get back to you within 24 hours.
+              Ready to start your next project? Fill out the form below and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
 

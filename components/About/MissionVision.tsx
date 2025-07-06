@@ -55,8 +55,8 @@ const MissionVision = () => {
               transition={{ duration: 0.3 }}
             >
               <blockquote className="text-xl font-medium text-white italic">
-                "We don't just build software; we craft digital experiences that transform possibilities into
-                realities."
+                &quot;We don&apos;t just build software; we craft digital experiences that transform possibilities into
+                realities.&quot;
               </blockquote>
             </motion.div>
           </motion.div>
@@ -95,7 +95,7 @@ const MissionVision = () => {
               </motion.h2>
               <p className="text-lg text-[#D1D5DB] leading-relaxed">
                 To be the global leader in AI-powered software solutions, creating a future where technology seamlessly
-                integrates with human creativity to solve the world's most complex challenges.
+                integrates with human creativity to solve the world&apos;s most complex challenges.
               </p>
             </div>
             <motion.div

@@ -20,7 +20,7 @@ export const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
           <h3 className="text-2xl font-bold text-white mb-4">Quote Request Sent!</h3>
 
           <p className="text-slate-300 mb-6">
-            Your request has been received. We'll be in touch within 24 hours with a custom plan tailored to your needs.
+            Your request has been received. We&apos;ll be in touch within 24 hours with a custom plan tailored to your needs.
           </p>
 
           <Button onClick={onClose} className="w-full">

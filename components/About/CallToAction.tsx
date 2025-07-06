@@ -28,7 +28,7 @@ const CallToAction = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Want to work with us?</h2>
           <p className="text-lg text-[#D1D5DB] mb-12 max-w-2xl mx-auto">
-            Let's collaborate to bring your vision to life with cutting-edge technology and innovative solutions.
+            Let&apos;s collaborate to bring your vision to life with cutting-edge technology and innovative solutions.
           </p>
           <motion.button
             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-[#00D1FF] text-[#00D1FF] font-semibold text-lg rounded-full hover:bg-[#00D1FF] hover:text-[#020A15] transition-all duration-500 overflow-hidden"
@@ -41,7 +41,7 @@ const CallToAction = () => {
               whileHover={{ scale: 1 }}
               transition={{ duration: 0.5 }}
             />
-            <span className="relative z-10">Let's Build Something Great</span>
+            <span className="relative z-10">Let&apos;s Build Something Great</span>
             <motion.div
               className="relative z-10"
               animate={{ x: [0, 5, 0] }}

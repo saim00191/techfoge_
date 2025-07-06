@@ -25,7 +25,7 @@ export const ContactHero = ({ isLoaded }: ContactHeroProps) => {
           }`}
         >
           <p className="text-xl md:text-2xl lg:text-3xl text-[#D1D5DB] leading-relaxed max-w-4xl mx-auto">
-            Let's connect — we'd love to hear from you.
+            Let&apos;s connect — we&apos;d love to hear from you.
           </p>
         </div>
 

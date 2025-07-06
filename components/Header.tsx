@@ -360,7 +360,7 @@ export default function Header() {
     const pathname = usePathname() 
     const isAdminRoute = pathname.startsWith("/admin") 
   
-    if (isAdminRoute) return null 
+
 
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
@@ -388,6 +388,8 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
+
+      if (isAdminRoute) return null 
 
   const navLinks = [
     { name: "Home", href: "/" },

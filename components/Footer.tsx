@@ -19,7 +19,7 @@ export default function FuturisticFooter() {
   const pathname = usePathname() 
   const isAdminRoute = pathname.startsWith("/admin") 
 
-  if (isAdminRoute) return null 
+
 
 
   const [isVisible, setIsVisible] = useState(false)
@@ -41,6 +41,9 @@ export default function FuturisticFooter() {
 
     return () => observer.disconnect()
   }, [])
+
+
+    if (isAdminRoute) return null 
 
   const companyInfo = [
     { name: "About", href: "/about" },

@@ -219,7 +219,7 @@ export default function IndustriesInfiniteCarouselFixed() {
 
             {/* Button content */}
             <span className="relative z-10 flex items-center space-x-2">
-              <span>Let's Talk</span>
+              <span>Let &apos;s Talk</span>
               <svg
                 className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"

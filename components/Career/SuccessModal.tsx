@@ -60,7 +60,7 @@ export const SuccessModal = ({ showSuccessModal, showCheckmark }: SuccessModalPr
             animation: "fadeInUp 0.5s ease-out 0.3s both",
           }}
         >
-          Your application has been submitted successfully! We'll review your application and get back to you soon.
+          Your application has been submitted successfully! We&apos;ll review your application and get back to you soon.
         </p>
         {/* Animated border glow */}
         <div

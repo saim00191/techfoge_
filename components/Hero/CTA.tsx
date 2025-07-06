@@ -63,7 +63,7 @@ export default function MiniContactCTA() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4">
             Have a project in mind?{" "}
             <span className="text-[#00D1FF] relative">
-              Let's make it real.
+            Let &apos;s make it real.
               {/* Underline glow effect */}
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00D1FF] to-transparent opacity-60 blur-sm" />
             </span>

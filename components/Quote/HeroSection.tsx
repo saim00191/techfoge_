@@ -24,7 +24,7 @@ export const HeroSection = ({
           </h1>
 
           <p className="text-xl text-slate-300 mb-8 animate-fadeInUp" style={{ animationDelay: "0.2s" }}>
-            Tell us about your project — we'll get back with a custom plan tailored to your vision and goals.
+            Tell us about your project — we&apos;ll get back with a custom plan tailored to your vision and goals.
           </p>
 
           <div

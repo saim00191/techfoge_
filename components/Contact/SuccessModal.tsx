@@ -66,7 +66,7 @@ export const SuccessModal = ({ showSuccess, setShowSuccess }: SuccessModalProps)
 
         {/* Subtext */}
         <p className="text-[#D1D5DB] text-center leading-relaxed animate-slide-up-delayed">
-          Thank you for reaching out. We'll get back to you within 24 hours.
+          Thank you for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
 
         {/* Decorative elements */}

@@ -20,7 +20,7 @@ export const CTASection = ({ visibleSections, sectionRefs }: CTASectionProps) =>
               <Zap size={24} className="text-[#00D1FF]" />
             </div>
             <p className="text-lg text-[#D1D5DB] mb-8 max-w-2xl mx-auto">
-              Let's leverage these cutting-edge technologies to transform your vision into reality. Our expert team
+              Let&apos;s leverage these cutting-edge technologies to transform your vision into reality. Our expert team
               combines innovation with proven expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
