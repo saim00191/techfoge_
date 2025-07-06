@@ -11,6 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 // app/layout.tsx or app/metadata.ts
 
+<meta name="google-site-verification" content="zrLe5IoW0G6SBGWdVLRnIMt1NnYFGQIvTHwsF5UB-g0" />
+
 export const metadata: Metadata = {
   title: {
     default: "TechFoge - AI-Powered Software & Web Solutions",
