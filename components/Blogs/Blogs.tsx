@@ -480,7 +480,7 @@ export default function BlogPage() {
                 <h3 className="text-3xl font-bold font-['Orbitron'] text-white mb-4">
                   No Published <span className="text-[#00D1FF]">Blogs</span> Yet
                 </h3>
-                <p className="text-slate-300 text-lg">Stay tuned! We're working on some amazing content for you.</p>
+                <p className="text-slate-300 text-lg">Stay tuned! We&apos;re working on some amazing content for you.</p>
               </div>
             </div>
           </div>
