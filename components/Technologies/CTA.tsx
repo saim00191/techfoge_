@@ -16,9 +16,9 @@ export const CTASection = ({ visibleSections, sectionRefs }: CTASectionProps) =>
         >
           <div className="relative bg-gradient-to-br from-[#00D1FF]/10 via-[#020A15]/80 to-[#00D1FF]/10 rounded-2xl p-12 border border-[#00D1FF]/20">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Award size={24} className="text-[#00D1FF]" />
+              <Award size={24} className="text-[#00D1FF] hidden md:block" />
               <h3 className="text-2xl md:text-3xl font-bold text-white">Ready to Build Something Extraordinary?</h3>
-              <Zap size={24} className="text-[#00D1FF]" />
+              <Zap size={24} className="text-[#00D1FF] hidden md:block" />
             </div>
             <p className="text-lg text-[#D1D5DB] mb-8 max-w-2xl mx-auto">
               Let&apos;s leverage these cutting-edge technologies to transform your vision into reality. Our expert team
