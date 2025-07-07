@@ -111,195 +111,114 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <head>
-        {/* Organization */}
-        <Script
-          id="org-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
+       import HeroBanner from "@/components/About/HeroBanner"
+import MissionVision from "@/components/About/MissionVision"
+import CoreValues from "@/components/About/CoreValues"
+import WhyChooseUs from "@/components/About/WhyChooseUs"
+import CallToAction from "@/components/About/CallToAction"
+import StatsSection from "@/components/About/StatsSection"
+import GlobalFootprint from "@/components/About/GlobalFootprint"
+import Script from "next/script"
+
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn more about TechFoge, a future-driven tech company offering AI, software, mobile, and web development services. Discover our mission, team, and values.",
+  openGraph: {
+    title: "About Us | TechFoge",
+    description:
+      "Meet the team behind TechFoge and explore our journey in building cutting-edge digital solutions with AI and modern tech stacks.",
+    url: "https://techfoge.com/about",
+    siteName: "TechFoge",
+    images: [
+      {
+        url: "https://techfoge.com/og-about.jpg", // Replace with actual OG image
+        width: 1200,
+        height: 630,
+        alt: "About TechFoge Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us",
+    description:
+      "Explore TechFoge's mission, values, and the creative minds behind your digital success.",
+    images: ["https://techfoge.com/twitter-about.jpg"],
+  },
+  alternates: {
+    canonical: "https://techfoge.com/about",
+  },
+}
+
+export default function AboutTechFoge() {
+  return (
+    <>
+      <Script
+        id="about-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "About TechFoge",
+            url: "https://techfoge.com/about",
+            mainEntity: {
               "@type": "Organization",
               name: "TechFoge",
               url: "https://techfoge.com",
               logo: "https://techfoge.com/logo.png",
               sameAs: [
+                "https://www.facebook.com/TechFoge",
                 "https://twitter.com/Tech_Foge",
-                "https://facebook.com/TechFoge",
-                "https://instagram.com/tech_foge",
+                "https://www.instagram.com/tech_foge",
                 "https://wa.me/923253848828",
                 "https://www.threads.net/@tech_foge",
-                "https://linkedin.com/company/techfoge",
-                "https://tiktok.com/@tech_foge"
+                "https://www.linkedin.com/company/tech-foge",
+                "https://www.tiktok.com/@tech_foge"
               ],
+              description:
+                "TechFoge is a modern tech company offering web development, AI solutions, IT support, design, and digital transformation services.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Lahore",
+                addressRegion: "Punjab",
+                postalCode: "54000",
+                addressCountry: "PK",
+              },
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+92-325-3848828",
-                contactType: "Customer Support"
-              }
-            })
-          }}
-        />
-
-        {/* Job Posting */}
-{/*         <Script
-          id="job-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "JobPosting",
-              title: "Full Stack Developer",
-              description: "We are hiring a full stack developer skilled in React, Node.js, and Sanity.",
-              datePosted: "2024-07-01",
-              validThrough: "2024-09-01",
-              employmentType: "FULL_TIME",
-              hiringOrganization: {
-                "@type": "Organization",
-                name: "TechFoge",
-                sameAs: "https://techfoge.com",
-                logo: "https://techfoge.com/logo.png"
+                contactType: "customer support",
+                availableLanguage: ["English", "Urdu"],
               },
-              jobLocation: {
-                "@type": "Place",
-                address: {
-                  "@type": "PostalAddress",
-                  addressLocality: "Hyderabad",
-                  addressRegion: "Sindh",
-                  addressCountry: "PK"
-                }
-              }
-            })
-          }}
-        /> */}
+              founder: {
+                "@type": "Person",
+                name: "Saim Raza",
+              },
+              foundingDate: "2022",
+              employee: {
+                "@type": "OrganizationRole",
+                name: "Team of expert developers and designers",
+              },
+            },
+          }),
+        }}
+      />
+      <div className="py-12 bg-[#020A15] relative overflow-hidden font-['Poppins']">
+        <HeroBanner />
+        <MissionVision />
+        <CoreValues />
+        <WhyChooseUs />
+        <CallToAction />
+        <StatsSection />
+        <GlobalFootprint />
+      </div>
+    </>
+  )
+}
 
-        {/* Contact Page */}
-        // <Script
-        //   id="contact-jsonld"
-        //   type="application/ld+json"
-        //   strategy="afterInteractive"
-        //   dangerouslySetInnerHTML={{
-        //     __html: JSON.stringify({
-        //       "@context": "https://schema.org",
-        //       "@type": "ContactPage",
-        //       name: "Contact TechFoge",
-        //       url: "https://techfoge.com/contact"
-        //     })
-        //   }}
-        // />
-
-        {/* About Page */}
-{/*         <Script
-          id="about-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "AboutPage",
-              name: "About TechFoge",
-              url: "https://techfoge.com/about"
-            })
-          }}
-        /> */}
- 
-        {/* Privacy Policy */}
-{/*         <Script
-          id="privacy-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: "Privacy Policy",
-              url: "https://techfoge.com/privacy-policy"
-            })
-          }}
-        /> */}
-
-        {/* Blogs Page */}
-{/*         <Script
-          id="blog-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Blog",
-              name: "TechFoge Blog",
-              url: "https://techfoge.com/blogs"
-            })
-          }}
-        />  */}
-
-        {/* Services Page */}
-{/*        <Script
-          id="services-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              name: "TechFoge Services",
-              url: "https://techfoge.com/services"
-            })
-          }}
-        /> */}
-
-        {/* Technologies Page */}
-{/*         <Script
-          id="technologies-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: "Technologies We Use",
-              url: "https://techfoge.com/technologies"
-            })
-          }}
-        /> */}
-
-        {/* Quote Request Page */}
-{/*         <Script
-          id="quote-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: "Request a Quote",
-              url: "https://techfoge.com/quote"
-            })
-          }}
-        /> */}
-
-        {/* WebSite & Search Box */}
-        <Script
-          id="search-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "TechFoge",
-              url: "https://techfoge.com",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://techfoge.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })
-          }}
-        />
-      </head>
       <body className={` ${poppins.className}`}>
         <div>
           <Header />
