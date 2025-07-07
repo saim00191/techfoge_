@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://techfoge.com/og-image.jpg",
+        url: "https://techfoge.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "TechFoge - Digital Transformation Experts",
