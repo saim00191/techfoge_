@@ -176,22 +176,22 @@ export default function RootLayout({
         /> */}
 
         {/* Contact Page */}
-{/*         <Script
-          id="contact-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ContactPage",
-              name: "Contact TechFoge",
-              url: "https://techfoge.com/contact"
-            })
-          }}
-        />
+        // <Script
+        //   id="contact-jsonld"
+        //   type="application/ld+json"
+        //   strategy="afterInteractive"
+        //   dangerouslySetInnerHTML={{
+        //     __html: JSON.stringify({
+        //       "@context": "https://schema.org",
+        //       "@type": "ContactPage",
+        //       name: "Contact TechFoge",
+        //       url: "https://techfoge.com/contact"
+        //     })
+        //   }}
+        // />
 
         {/* About Page */}
-        <Script
+{/*         <Script
           id="about-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -203,8 +203,8 @@ export default function RootLayout({
               url: "https://techfoge.com/about"
             })
           }}
-        />
- */}
+        /> */}
+ 
         {/* Privacy Policy */}
 {/*         <Script
           id="privacy-jsonld"
@@ -218,10 +218,10 @@ export default function RootLayout({
               url: "https://techfoge.com/privacy-policy"
             })
           }}
-        />
+        /> */}
 
         {/* Blogs Page */}
-        <Script
+{/*         <Script
           id="blog-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -233,10 +233,10 @@ export default function RootLayout({
               url: "https://techfoge.com/blogs"
             })
           }}
-        /> */}
+        />  */}
 
         {/* Services Page */}
-{/*         <Script
+{/*        <Script
           id="services-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -248,10 +248,10 @@ export default function RootLayout({
               url: "https://techfoge.com/services"
             })
           }}
-        />
+        /> */}
 
         {/* Technologies Page */}
-        <Script
+{/*         <Script
           id="technologies-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
