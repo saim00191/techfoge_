@@ -24,7 +24,7 @@ export const ApplicationForm = ({
           animate={{ opacity: 1, height: "auto", y: 0 }}
           exit={{ opacity: 0, height: 0, y: -20 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="mt-8 p-6 bg-[#020A15]/60 backdrop-blur-md border border-[#00D1FF]/30 rounded-xl overflow-hidden"
+          className="mt-8 py-6 px-3 bg-[#020A15]/60 backdrop-blur-md border border-[#00D1FF]/30 rounded-xl overflow-hidden"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,14 +33,7 @@ export const ApplicationForm = ({
           >
             <div className="flex items-center justify-between mb-6">
               <h4 className="text-2xl font-bold text-white">Apply for {job.title}</h4>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setShowApplicationForm(null)}
-                className="text-[#D1D5DB] hover:text-[#00D1FF] transition-colors duration-200"
-              >
-                <X size={24} />
-              </motion.button>
+           
             </div>
 
             <form onSubmit={(e) => handleApplicationSubmit(e, job._id)} className="space-y-6">
@@ -213,7 +206,7 @@ export const ApplicationForm = ({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.3 }}
-                className="flex gap-4 justify-center"
+                className="flex flex-col xms:flex-row gap-4 justify-center"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -229,7 +222,7 @@ export const ApplicationForm = ({
                   whileTap={{ scale: 0.95 }}
                   type="submit"
                   disabled={submittingApplication === job._id}
-                  className="bg-[#00D1FF] text-[#020A15] px-8 py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  className="bg-[#00D1FF] text-[#020A15] px-8 py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {submittingApplication === job._id ? (
                     <>

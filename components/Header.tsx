@@ -5,7 +5,7 @@ import Logo from "../images/logomain.png"
 import Image from "next/image"
 import Link from "next/link"
 import { Poppins } from "next/font/google"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaThreads } from "react-icons/fa6"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaThreads , FaTiktok} from "react-icons/fa6"
 import {
   FaCode,
   FaGlobe,
@@ -280,9 +280,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu (Fullscreen, Animated) */}
+        {/* Mobile Menu (Fullscreen, Animated) - ENHANCED SCROLLING */}
         <div
-          className={`mdl:hidden fixed top-0 left-0 w-full h-screen bg-[#020A15]/95 backdrop-blur-sm flex flex-col items-center justify-center gap-8 z-40 transform transition-all duration-700 ease-out ${
+          className={`mdl:hidden fixed top-0 left-0 w-full h-screen bg-[#020A15]/95 backdrop-blur-sm flex flex-col items-center justify-start z-40 transform transition-all duration-700 ease-out ${
             isOpen ? "scale-100 opacity-100 visible" : "scale-95 opacity-0 invisible"
           }`}
         >
@@ -293,128 +293,141 @@ export default function Header() {
             }`}
           />
 
-          {/* Navigation Links with Staggered Animation - FIXED */}
-          <ul className="flex flex-col items-center justify-center gap-6 text-white text-lg font-medium relative z-10 max-h-[60vh] overflow-y-scroll w-full px-4">
-            {navLinks.map((item, index) => (
-              <li
-                key={item.name}
-                className={`w-full transform transition-all duration-700 ease-out ${
-                  isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-8 opacity-0 scale-95"
-                }`}
-                style={{
-                  transitionDelay: isOpen ? `${index * 100 + 200}ms` : `${(navLinks.length - index) * 50}ms`,
-                }}
-              >
-                {item.hasDropdown ? (
-                  <div className="w-full">
-                    <button
-                      onClick={handleMobileServicesToggle}
-                      className="w-full flex items-center justify-center gap-2 hover:text-[#00D1FF] transition-all duration-300 hover:scale-110 hover:tracking-wider relative group text-center py-3"
-                    >
-                      {item.name}
-                      <FaChevronDown
-                        className={`text-xs transition-transform duration-300 ${
-                          isMobileServicesOpen ? "rotate-180" : "rotate-0"
-                        }`}
-                      />
-                      <span className="absolute left-1/2  -translate-x-1/2 -bottom-1 h-[2px] w-24 bg-[#00D1FF] transform scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100" />
-                    </button>
-
-                    {/* Mobile Services Submenu */}
-                    <div
-                      className={`mt-4 space-y-3 overflow-y-scroll transition-all duration-500 ease-in-out px-4 ${
-                        isMobileServicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          {/* Mobile Menu Content Container - FULLY SCROLLABLE */}
+          <div className="flex flex-col w-full h-full pt-20 pb-20 relative z-10">
+            {/* Navigation Links Container - ENHANCED SCROLLING */}
+            <div className="flex-1 overflow-y-auto mobile-menu-scrollbar px-4">
+              <div className="flex flex-col items-center justify-start min-h-full py-8">
+                <ul className="flex flex-col items-center justify-center gap-6 text-white text-lg font-medium w-full max-w-md">
+                  {navLinks.map((item, index) => (
+                    <li
+                      key={item.name}
+                      className={`w-full transform transition-all duration-700 ease-out ${
+                        isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-8 opacity-0 scale-95"
                       }`}
+                      style={{
+                        transitionDelay: isOpen ? `${index * 100 + 200}ms` : `${(navLinks.length - index) * 50}ms`,
+                      }}
                     >
-                      {services.map((service, serviceIndex) => {
-                        const IconComponent = service.icon
-                        return (
-                          <Link
-                            key={service.name}
-                            href={service.href}
-                            className={`flex items-center gap-3 p-3 bg-[#00D1FF]/5 rounded-lg hover:bg-[#00D1FF]/15 transition-all duration-300 hover:scale-105 transform w-full ${
-                              isMobileServicesOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-                            }`}
-                            style={{
-                              transitionDelay: isMobileServicesOpen ? `${serviceIndex * 50}ms` : "0ms",
-                            }}
-                            onClick={() => {
-                              setIsOpen(false)
-                              setIsMobileServicesOpen(false)
-                            }}
+                      {item.hasDropdown ? (
+                        <div className="w-full">
+                          <button
+                            onClick={handleMobileServicesToggle}
+                            className="w-full flex items-center justify-center gap-2 hover:text-[#00D1FF] transition-all duration-300 hover:scale-110 hover:tracking-wider relative group text-center py-3"
                           >
-                            <div className="w-8 h-8 bg-[#00D1FF]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <IconComponent className="text-[#00D1FF] text-sm" />
-                            </div>
-                            <div className="flex-1 text-left">
-                              <div className="text-white font-medium text-sm">{service.name}</div>
-                              <div className="text-gray-400 text-xs">{service.description}</div>
-                            </div>
-                          </Link>
-                        )
-                      })}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="w-full block text-center py-2 hover:text-[#00D1FF] transition-all duration-300 hover:scale-110 hover:tracking-wider relative group"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                    <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-[2px] w-24 bg-[#00D1FF]  scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100" />
-                  </Link>
-                )}
-              </li>
-            ))}
+                            {item.name}
+                            <FaChevronDown
+                              className={`text-xs transition-transform duration-300 ${
+                                isMobileServicesOpen ? "rotate-180" : "rotate-0"
+                              }`}
+                            />
+                            <span className="absolute left-1/2  -translate-x-1/2 -bottom-1 h-[2px] w-24 bg-[#00D1FF] transform scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100" />
+                          </button>
 
-            <li
-              className={`w-full transform transition-all duration-700 ease-out ${
-                isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-8 opacity-0 scale-95"
+                          {/* Mobile Services Submenu - ENHANCED SCROLLING */}
+                          <div
+                            className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${
+                              isMobileServicesOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"
+                            }`}
+                          >
+                            <div className="max-h-[60vh] overflow-y-auto mobile-submenu-scrollbar px-2">
+                              <div className="space-y-3 py-2">
+                                {services.map((service, serviceIndex) => {
+                                  const IconComponent = service.icon
+                                  return (
+                                    <Link
+                                      key={service.name}
+                                      href={service.href}
+                                      className={`flex items-center gap-3 p-3 bg-[#00D1FF]/5 rounded-lg hover:bg-[#00D1FF]/15 transition-all duration-300 hover:scale-105 transform w-full ${
+                                        isMobileServicesOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                                      }`}
+                                      style={{
+                                        transitionDelay: isMobileServicesOpen ? `${serviceIndex * 50}ms` : "0ms",
+                                      }}
+                                      onClick={() => {
+                                        setIsOpen(false)
+                                        setIsMobileServicesOpen(false)
+                                      }}
+                                    >
+                                      <div className="w-8 h-8 bg-[#00D1FF]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <IconComponent className="text-[#00D1FF] text-sm" />
+                                      </div>
+                                      <div className="flex-1 text-left">
+                                        <div className="text-white font-medium text-sm">{service.name}</div>
+                                        <div className="text-gray-400 text-xs">{service.description}</div>
+                                      </div>
+                                    </Link>
+                                  )
+                                })}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="w-full block text-center py-3 hover:text-[#00D1FF] transition-all duration-300 hover:scale-110 hover:tracking-wider relative group"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.name}
+                          <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-[2px] w-24 bg-[#00D1FF]  scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100" />
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+
+                  {/* Get Quote Button */}
+                  <li
+                    className={`w-full transform transition-all duration-700 ease-out ${
+                      isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-8 opacity-0 scale-95"
+                    }`}
+                    style={{
+                      transitionDelay: isOpen ? `${navLinks.length * 100 + 200}ms` : "0ms",
+                    }}
+                  >
+                    <Link href="/quote" onClick={() => setIsOpen(false)} className="w-full block px-4">
+                      <button className="mt-4 xsm:hidden px-6 py-3 rounded-full border w-full border-[#00D1FF] text-white font-semibold hover:bg-[#00D1FF33] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D1FF]/20 relative overflow-hidden group">
+                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#00D1FF]/20 via-transparent to-[#00D1FF]/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                        <span className="relative z-10">Get a Quote</span>
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Social Icons - FIXED POSITION */}
+            <div
+              className={`flex-shrink-0 flex items-center justify-center gap-5 xs:gap-8 text-[#00D1FF] text-xl py-6 transform transition-all duration-800 ease-out ${
+                isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-90"
               }`}
               style={{
-                transitionDelay: isOpen ? `${navLinks.length * 100 + 200}ms` : "0ms",
+                transitionDelay: isOpen ? "800ms" : "0ms",
               }}
             >
-              <Link href="/quote" onClick={() => setIsOpen(false)} className="w-full block px-4">
-                <button className="mt-4 xsm:hidden px-6 py-3 rounded-full border w-full border-[#00D1FF] text-white font-semibold hover:bg-[#00D1FF33] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D1FF]/20 relative overflow-hidden group">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#00D1FF]/20 via-transparent to-[#00D1FF]/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
-                  <span className="relative z-10">Get a Quote</span>
-                </button>
-              </Link>
-            </li>
-          </ul>
-
-          {/* Social Icons with Enhanced Animation */}
-          <div
-            className={`absolute bottom-6 flex items-center gap-5 xs:gap-8 text-[#00D1FF] text-xl transform transition-all duration-800 ease-out ${
-              isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-90"
-            }`}
-            style={{
-              transitionDelay: isOpen ? "800ms" : "0ms",
-            }}
-          >
-            {[
-              { icon: FaFacebookF, href: "https://facebook.com" },
-              { icon: FaInstagram, href: "https://instagram.com" },
-              { icon: FaLinkedinIn, href: "https://linkedin.com" },
-              { icon: FaTwitter, href: "https://twitter.com" },
-              { icon: FaThreads, href: "https://www.threads.net" },
-            ].map(({ icon: Icon, href }, index) => (
-              <Link
-                key={href}
-                href={href}
-                target="_blank"
-                className={`transform transition-all duration-500 ease-out hover:scale-125 hover:rotate-12 hover:text-white hover:drop-shadow-lg ${
-                  isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                }`}
-                style={{
-                  transitionDelay: isOpen ? `${900 + index * 100}ms` : `${index * 50}ms`,
-                }}
-              >
-                <Icon className="hover:animate-pulse" />
-              </Link>
-            ))}
+              {[
+                { icon: FaFacebookF, href: "https://facebook.com/TechFoge" },
+                { icon: FaInstagram, href: "https://instagram.com/tech_foge" },
+                { icon: FaTiktok, href: "https://www.tiktok.com/@tech_foge" },
+                { icon: FaLinkedinIn, href: "https://linkedin.com/company/tech-foge" },
+                { icon: FaTwitter, href: "https://twitter.com" },
+                { icon: FaThreads, href: "https://www.threads.net/@tech_foge" },
+              ].map(({ icon: Icon, href }, index) => (
+                <Link
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  className={`transform transition-all duration-500 ease-out hover:scale-125 hover:rotate-12 hover:text-white hover:drop-shadow-lg ${
+                    isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                  }`}
+                  style={{
+                    transitionDelay: isOpen ? `${900 + index * 100}ms` : `${index * 50}ms`,
+                  }}
+                >
+                  <Icon className="hover:animate-pulse" />
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Decorative Elements */}
@@ -438,7 +451,7 @@ export default function Header() {
           />
         </div>
 
-        {/* Custom Styles */}
+        {/* Enhanced Custom Styles for Scrolling */}
         <style jsx>{`
           @keyframes fade-in-up {
             from {
@@ -453,6 +466,8 @@ export default function Header() {
           .animate-fade-in-up {
             animation: fade-in-up 0.3s ease-out forwards;
           }
+
+          /* Desktop Dropdown Scrollbar */
           .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
           }
@@ -466,6 +481,66 @@ export default function Header() {
           }
           .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: rgba(0, 209, 255, 0.7);
+          }
+
+          /* Mobile Menu Main Scrollbar */
+          .mobile-menu-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 209, 255, 0.5) rgba(0, 209, 255, 0.1);
+          }
+          .mobile-menu-scrollbar::-webkit-scrollbar {
+            width: 6px;
+          }
+          .mobile-menu-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 209, 255, 0.1);
+            border-radius: 3px;
+            margin: 10px 0;
+          }
+          .mobile-menu-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 209, 255, 0.6);
+            border-radius: 3px;
+            border: 1px solid rgba(0, 209, 255, 0.2);
+          }
+          .mobile-menu-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 209, 255, 0.8);
+          }
+
+          /* Mobile Submenu Scrollbar */
+          .mobile-submenu-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 209, 255, 0.4) rgba(0, 209, 255, 0.1);
+          }
+          .mobile-submenu-scrollbar::-webkit-scrollbar {
+            width: 4px;
+          }
+          .mobile-submenu-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 209, 255, 0.1);
+            border-radius: 2px;
+            margin: 5px 0;
+          }
+          .mobile-submenu-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 209, 255, 0.5);
+            border-radius: 2px;
+          }
+          .mobile-submenu-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 209, 255, 0.7);
+          }
+
+          /* Smooth scrolling for all browsers */
+          .mobile-menu-scrollbar,
+          .mobile-submenu-scrollbar,
+          .custom-scrollbar {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          /* Hide scrollbar for Firefox */
+          @-moz-document url-prefix() {
+            .mobile-menu-scrollbar,
+            .mobile-submenu-scrollbar {
+              scrollbar-width: thin;
+              scrollbar-color: rgba(0, 209, 255, 0.5) transparent;
+            }
           }
         `}</style>
       </div>

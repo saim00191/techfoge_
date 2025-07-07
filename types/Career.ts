@@ -1,5 +1,6 @@
 import type React from "react"
 import type { LucideIcon } from "lucide-react"
+import { IconType } from "react-icons/lib"
 
 export interface JobPost {
   _id: string
@@ -51,7 +52,7 @@ export interface ApplicationFormData {
 }
 
 export interface SocialLink {
-  icon: LucideIcon
+  icon: IconType
   href: string
   label: string
   color: string

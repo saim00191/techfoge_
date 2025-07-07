@@ -2,7 +2,9 @@
 import type React from "react"
 import { Poppins } from "next/font/google"
 import { useState, useEffect } from "react"
-import { Linkedin, Twitter, Github, Instagram, Youtube, Mail } from "lucide-react"
+import { FaLinkedin, FaTwitter, FaInstagram, FaYoutube, FaTiktok, FaFacebookF } from "react-icons/fa"
+import { SiThreads } from "react-icons/si"
+import { MdEmail } from "react-icons/md"
 import { client } from "@/sanity/lib/client"
 import { addApplicationToJob } from "@/app/admin/jobs/sanity-operation"
 import type { JobPost, ApplicationFormData, SocialLink } from "@/types/Career"
@@ -279,49 +281,64 @@ const [, setJobs] = useState<JobPost[]>([])
   }
 
   const socialLinks: SocialLink[] = [
-    {
-      icon: Linkedin,
-      href: "#",
-      label: "LinkedIn",
-      color: "hover:text-[#0077B5]",
-      bgColor: "hover:bg-[#0077B5]/20",
-    },
-    {
-      icon: Twitter,
-      href: "#",
-      label: "Twitter/X",
-      color: "hover:text-[#1DA1F2]",
-      bgColor: "hover:bg-[#1DA1F2]/20",
-    },
-    {
-      icon: Github,
-      href: "#",
-      label: "GitHub",
-      color: "hover:text-[#333]",
-      bgColor: "hover:bg-white/20",
-    },
-    {
-      icon: Instagram,
-      href: "#",
-      label: "Instagram",
-      color: "hover:text-[#E4405F]",
-      bgColor: "hover:bg-[#E4405F]/20",
-    },
-    {
-      icon: Youtube,
-      href: "#",
-      label: "YouTube",
-      color: "hover:text-[#FF0000]",
-      bgColor: "hover:bg-[#FF0000]/20",
-    },
-    {
-      icon: Mail,
-      href: "#",
-      label: "Email",
-      color: "hover:text-[#00D1FF]",
-      bgColor: "hover:bg-[#00D1FF]/20",
-    },
-  ]
+  {
+    icon: FaLinkedin,
+    href: "https://linkedin.com/company/tech-foge",
+    label: "LinkedIn",
+    color: "hover:text-[#0077B5]",
+    bgColor: "hover:bg-[#0077B5]/20",
+  },
+  {
+    icon: FaTwitter,
+    href: "https://x.com/Tech_Foge",
+    label: "Twitter/X",
+    color: "hover:text-[#1DA1F2]",
+    bgColor: "hover:bg-[#1DA1F2]/20",
+  },
+  {
+    icon: FaFacebookF,
+    href: "https://facebook.com/TechFoge",
+    label: "Facebook",
+    color: "hover:text-[#1877F2]",
+    bgColor: "hover:bg-[#1877F2]/20",
+  },
+  {
+    icon: FaInstagram,
+    href: "https://instagram.com/tech_foge",
+    label: "Instagram",
+    color: "hover:text-[#E4405F]",
+    bgColor: "hover:bg-[#E4405F]/20",
+  },
+  {
+    icon: FaYoutube,
+    href: "https://www.youtube.com/@TechFoge",
+    label: "YouTube",
+    color: "hover:text-[#FF0000]",
+    bgColor: "hover:bg-[#FF0000]/20",
+  },
+  {
+    icon: FaTiktok,
+    href: "https://www.tiktok.com/@tech_foge",
+    label: "TikTok",
+    color: "hover:text-[#010101]",
+    bgColor: "hover:bg-[#010101]/10",
+  },
+  {
+    icon: SiThreads,
+    href: "https://www.threads.net/@tech_foge",
+    label: "Threads",
+    color: "hover:text-[#000000]",
+    bgColor: "hover:bg-[#000000]/10",
+  },
+  {
+    icon: MdEmail,
+    href: "mailto:techfoge1@gmail.com",
+    label: "Email",
+    color: "hover:text-[#D44638]",
+    bgColor: "hover:bg-[#D44638]/20",
+  },
+]
+
 
   return (
     <div className={`bg-[#020A15] relative overflow-hidden ${poppins.className}`}>

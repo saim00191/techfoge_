@@ -15,6 +15,7 @@ import { usePathname } from "next/navigation"
 import Image from "next/image"
 import Logo from '@/images/tech-foge.png'
 import Link from "next/link"
+import { FaTiktok, FaYoutube } from "react-icons/fa6"
 export default function FuturisticFooter() {
 
 
@@ -62,11 +63,12 @@ export default function FuturisticFooter() {
   ]
 
   const socialLinks = [
-    { name: "LinkedIn", icon: FaLinkedin, href: "https://linkedin.com", color: "#0077B5" },
-    { name: "X (Twitter)", icon: FaTwitter, href: "https://x.com", color: "#000000" },
-    { name: "Instagram", icon: FaInstagram, href: "https://instagram.com", color: "#E4405F" },
-    { name: "GitHub", icon: FaGithub, href: "https://github.com", color: "#333333" },
-    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com", color: "#1877F2" },
+    { name: "LinkedIn", icon: FaLinkedin, href: "https://linkedin.com/company/tech-foge", color: "#0077B5" },
+    { name: "X (Twitter)", icon: FaTwitter, href: "https://x.com/Tech_Foge", color: "#000000" },
+    { name: "Instagram", icon: FaInstagram, href: "https://instagram.com/tech_foge", color: "#E4405F" },
+    { name: "TikTok", icon: FaTiktok, href: "https://www.tiktok.com/@tech_foge", color: "#333333" },
+    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com/TechFoge", color: "#1877F2" },
+    { name: "Youtube", icon: FaYoutube, href: "https://www.youtube.com/@TechFoge", color: "#FF0000" },
   ]
 
   return (

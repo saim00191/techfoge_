@@ -25,7 +25,7 @@ export const JobCard = ({
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white/5 backdrop-blur-sm border border-[#00D1FF]/20 rounded-2xl p-8 hover:border-[#00D1FF]/60 hover:shadow-[0_0_30px_rgba(0,209,255,0.3)] transition-all duration-300 animate-float"
+      className="bg-white/5 backdrop-blur-sm border border-[#00D1FF]/20 rounded-2xl py-8 px-3 hover:border-[#00D1FF]/60 hover:shadow-[0_0_30px_rgba(0,209,255,0.3)] transition-all duration-300 animate-float"
       style={{
         animationDelay: `${index * 0.2}s`,
         animationDuration: `${4 + index * 0.5}s`,
