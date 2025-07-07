@@ -18,7 +18,7 @@ export const PrivacySections = ({ privacySections, visibleSections, sectionRefs 
               {/* Section Header */}
               <div className="text-center mb-12">
                 <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-[#00D1FF]/10 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#00D1FF]/10 rounded-full hidden xms:flex items-center justify-center">
                     <section.icon size={32} className="text-[#00D1FF]" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white">{section.title}</h2>
