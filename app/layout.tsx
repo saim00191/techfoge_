@@ -112,8 +112,9 @@ export default function RootLayout({
   return (
     <html lang="en">
        <head>
+        {/* Organization */}
         <Script
-          id="structured-data"
+          id="org-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -122,7 +123,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "TechFoge",
               url: "https://techfoge.com",
-              logo: "https://techfoge.com/logo.png", 
+              logo: "https://techfoge.com/logo.png",
               sameAs: [
                 "https://twitter.com/Tech_Foge",
                 "https://facebook.com/TechFoge",
@@ -130,14 +131,186 @@ export default function RootLayout({
                 "https://wa.me/923253848828",
                 "https://www.threads.net/@tech_foge",
                 "https://linkedin.com/company/techfoge",
-                "https://tiktok.com/@tech_foge",
+                "https://tiktok.com/@tech_foge"
               ],
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+92-325-3848828",
-                contactType: "Customer Support",
+                contactType: "Customer Support"
+              }
+            })
+          }}
+        />
+
+        {/* Job Posting */}
+        <Script
+          id="job-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              title: "Full Stack Developer",
+              description: "We are hiring a full stack developer skilled in React, Node.js, and Sanity.",
+              datePosted: "2024-07-01",
+              validThrough: "2024-09-01",
+              employmentType: "FULL_TIME",
+              hiringOrganization: {
+                "@type": "Organization",
+                name: "TechFoge",
+                sameAs: "https://techfoge.com",
+                logo: "https://techfoge.com/logo.png"
               },
-            }),
+              jobLocation: {
+                "@type": "Place",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Hyderabad",
+                  addressRegion: "Sindh",
+                  addressCountry: "PK"
+                }
+              }
+            })
+          }}
+        />
+
+        {/* Contact Page */}
+        <Script
+          id="contact-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              name: "Contact TechFoge",
+              url: "https://techfoge.com/contact"
+            })
+          }}
+        />
+
+        {/* About Page */}
+        <Script
+          id="about-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              name: "About TechFoge",
+              url: "https://techfoge.com/about"
+            })
+          }}
+        />
+
+        {/* FAQs Page */}
+        <Script
+          id="faq-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [] // Add questions and answers as needed
+            })
+          }}
+        />
+
+        {/* Privacy Policy */}
+        <Script
+          id="privacy-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Privacy Policy",
+              url: "https://techfoge.com/privacy-policy"
+            })
+          }}
+        />
+
+        {/* Blogs Page */}
+        <Script
+          id="blog-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Blog",
+              name: "TechFoge Blog",
+              url: "https://techfoge.com/blogs"
+            })
+          }}
+        />
+
+        {/* Services Page */}
+        <Script
+          id="services-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "TechFoge Services",
+              url: "https://techfoge.com/services"
+            })
+          }}
+        />
+
+        {/* Technologies Page */}
+        <Script
+          id="technologies-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Technologies We Use",
+              url: "https://techfoge.com/technologies"
+            })
+          }}
+        />
+
+        {/* Quote Request Page */}
+        <Script
+          id="quote-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Request a Quote",
+              url: "https://techfoge.com/quote"
+            })
+          }}
+        />
+
+        {/* WebSite & Search Box */}
+        <Script
+          id="search-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "TechFoge",
+              url: "https://techfoge.com",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://techfoge.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
           }}
         />
       </head>
