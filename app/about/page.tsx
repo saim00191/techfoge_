@@ -45,6 +45,56 @@ export const metadata: Metadata = {
 
 export default function AboutTechFoge() {
   return (
+    <>
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About TechFoge",
+              "url": "https://techfoge.com/about",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "TechFoge",
+                "url": "https://techfoge.com",
+                "logo": "https://techfoge.com/logo.png",
+                "sameAs": [
+                  "https://www.facebook.com/TechFoge",
+                  "https://twitter.com/Tech_Foge",
+                  "https://www.instagram.com/tech_foge",
+                  "https://wa.me/923253848828",
+                  "https://www.threads.net/@tech_foge",
+                  "https://www.linkedin.com/company/tech-foge",
+                  "https://www.tiktok.com/@tech_foge"
+                ],
+                "description": "TechFoge is a modern tech company offering web development, AI solutions, IT support, design, and digital transformation services.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Hyderabad",
+                  "addressRegion": "Sindh",
+                  "postalCode": "72000",
+                  "addressCountry": "PK"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+92-325-3848828",
+                  "contactType": "customer support",
+                  "availableLanguage": ["English", "Urdu"]
+                },
+                "founder": {
+                  "@type": "Person",
+                  "name": "Saim Raza"
+                },
+                "foundingDate": "2025",
+                "employee": {
+                  "@type": "OrganizationRole",
+                  "name": "Team of expert developers and designers"
+                }
+              }
+            }),
+          }}
+        />
     <div className="py-12 bg-[#020A15] relative overflow-hidden font-['Poppins']">
       <HeroBanner />
       <MissionVision />
@@ -54,5 +104,6 @@ export default function AboutTechFoge() {
       <StatsSection />
       <GlobalFootprint />
     </div>
+    </>
   )
 }
