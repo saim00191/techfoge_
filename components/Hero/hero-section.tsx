@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Poppins } from "next/font/google"
+import Link from "next/link"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -54,7 +55,7 @@ export default function ProfessionalHeroSection() {
               >
                 <div className="inline-flex items-center px-4 py-2 bg-[#00D1FF]/10 border border-[#00D1FF]/20 rounded-full text-[#00D1FF] text-sm font-medium">
                   <span className="w-2 h-2 bg-[#00D1FF] rounded-full mr-2 animate-pulse" />
-                  Trusted by <b> 100+ </b> Companies
+                  Trusted by <b className="ml-0.5 mr-0.5"> 100+ </b> Companies
                 </div>
               </div>
 
@@ -104,6 +105,7 @@ export default function ProfessionalHeroSection() {
                 }}
               >
                 {/* Primary CTA */}
+                <Link href="/contact" >
                 <button
                   className="group relative px-8 py-4 bg-[#00D1FF] text-white font-bold text-lg rounded-full transition-all duration-300 ease-out hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00D1FF]/50 focus:ring-offset-2 focus:ring-offset-[#020A15]"
                   style={{ willChange: "transform" }}
@@ -125,6 +127,7 @@ export default function ProfessionalHeroSection() {
                   {/* Glow Effect */}
                   <div className="absolute inset-0 rounded-full bg-[#00D1FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out blur-lg -z-10" />
                 </button>
+                </Link>
 
               
               </div>
@@ -140,7 +143,7 @@ export default function ProfessionalHeroSection() {
                 }}
               >
                 {[
-                  { number: "500+", label: "Projects" },
+                  { number: "200+", label: "Projects" },
                   { number: "99%", label: "Success Rate" },
                   { number: "24/7", label: "Support" },
                 ].map((stat, index) => (

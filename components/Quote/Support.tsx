@@ -28,7 +28,7 @@ export const SupportModal = ({ isOpen, onClose }: SupportModalProps) => {
             <Send className="w-5 h-5 text-[#00D1FF]" />
             <div>
               <p className="text-white font-medium">Email Support</p>
-              <p className="text-slate-400 text-sm">support@techfoge.com</p>
+              <p className="text-slate-400 text-sm">techfoge1@gmail.com</p>
             </div>
           </div>
         </div>

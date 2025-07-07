@@ -1,6 +1,7 @@
 "use client"
-import { Award, Zap, Globe, Database } from "lucide-react"
+import { Award, Zap, Globe } from "lucide-react"
 import type { CTASectionProps } from "@/types/Technology"
+import Link from "next/link"
 
 export const CTASection = ({ visibleSections, sectionRefs }: CTASectionProps) => {
   return (
@@ -23,19 +24,16 @@ export const CTASection = ({ visibleSections, sectionRefs }: CTASectionProps) =>
               Let&apos;s leverage these cutting-edge technologies to transform your vision into reality. Our expert team
               combines innovation with proven expertise.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
+              <Link href="/contact">
               <button className="bg-[#00D1FF] text-[#020A15] px-8 py-4 rounded-lg font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all duration-300">
                 <span className="flex items-center gap-2">
                   <Globe size={18} />
                   Start Your Project
                 </span>
               </button>
-              <button className="border-2 border-[#00D1FF] text-[#00D1FF] px-8 py-4 rounded-lg font-bold hover:bg-[#00D1FF]/10 hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-2">
-                  <Database size={18} />
-                  View Portfolio
-                </span>
-              </button>
+              </Link>
+
             </div>
           </div>
         </div>

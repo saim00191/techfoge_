@@ -13,7 +13,7 @@ export const HeroSection = ({
   budgetRanges,
 }: HeroSectionProps) => {
   return (
-    <section className=" flex items-center justify-center px-4 py-20">
+    <section className=" flex items-center justify-center px-4 pt-40 pb-20">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Hero Content */}
         <div className="text-center lg:text-left">

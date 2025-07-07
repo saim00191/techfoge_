@@ -2,7 +2,7 @@ import type { HeroSectionProps } from "@/types/Technology"
 
 export const HeroSection = ({ isLoaded, totalTechnologies, techCategories, averageProficiency }: HeroSectionProps) => {
   return (
-    <section className="relative z-10 pt-20 pb-16 px-4">
+    <section className="relative z-10 pt-40 pb-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
         {/* Main Heading */}
         <div

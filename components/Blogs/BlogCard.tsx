@@ -6,10 +6,9 @@ import type { BlogCardProps } from "@/types/Blog"
 import { generateSlug, extractTextFromContent, calculateReadTime } from "./utils/BlogHelper"
 
 export const BlogCard = ({ blog, featured = false }: BlogCardProps) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const [,setIsHovered] = useState(false)
   const slug = generateSlug(blog.title)
   const excerpt = extractTextFromContent(blog.content)
-  const readTime = calculateReadTime(blog.content)
 
   return (
     <div
@@ -27,7 +26,7 @@ export const BlogCard = ({ blog, featured = false }: BlogCardProps) => {
         <img
           src={blog.mainImageTop?.asset?.url || "/placeholder.svg?height=300&width=400"}
           alt={blog.title}
-          className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-48 transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
 
@@ -54,12 +53,14 @@ export const BlogCard = ({ blog, featured = false }: BlogCardProps) => {
 
         <p className="text-slate-300 mb-4 line-clamp-2">{blog.description || excerpt}</p>
 
-        <Link
+         <Link
           href={`/blogs/${slug}`}
-          className="group/btn flex items-center gap-2 text-[#00D1FF] group-hover:text-white font-medium cursor-pointer transition-all duration-300"
+          className="group inline-flex items-center gap-2 text-[#00D1FF] font-medium transition-all duration-300 hover:text-white"
         >
-          Read More
-          <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${isHovered ? "translate-x-1" : ""}`} />
+ 
+           {/* <span className="group">Read More</span> */}
+          <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2" />
+         
         </Link>
       </div>
     </div>

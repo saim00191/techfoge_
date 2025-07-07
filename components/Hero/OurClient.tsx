@@ -326,7 +326,9 @@ export default function SecondClientReview() {
 
   return (
     <>
-      <section className={`relative bg-[#020A15] py-16 md:py-24 overflow-hidden ${poppins.className}`}>
+      <section
+     
+      className={`relative bg-[#020A15]  py-16 md:py-24 overflow-hidden ${poppins.className}`}>
         {/* Section Header */}
         <div className="text-center flex flex-col mb-12 sm:mb-16 lg:mb-20 px-4">
           <div className="relative inline-block mb-6 sm:mb-8">

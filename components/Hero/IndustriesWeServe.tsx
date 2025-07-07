@@ -1,6 +1,7 @@
 "use client"
 import { useEffect } from "react"
 import { Poppins } from "next/font/google"
+import Link from "next/link"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -218,6 +219,8 @@ export default function IndustriesInfiniteCarouselFixed() {
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#00D1FF] via-[#005377] to-[#00D1FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></span>
 
             {/* Button content */}
+            <Link href="tel:+923253848828">
+
             <span className="relative z-10 flex items-center space-x-2">
               <span>Let &apos;s Talk</span>
               <svg
@@ -229,6 +232,7 @@ export default function IndustriesInfiniteCarouselFixed() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </span>
+            </Link>
           </button>
 
           {/* Alternative subtle link */}

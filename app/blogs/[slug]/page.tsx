@@ -632,7 +632,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     </span>
                   </button>
                   <Link
-                    href="/blog"
+                    href="/blogs"
                     className="border-2 border-[#00D1FF] text-[#00D1FF] px-8 py-3 rounded-lg font-bold hover:bg-[#00D1FF]/10 hover:scale-105 transition-all duration-300"
                   >
                     <span className="flex items-center gap-2">

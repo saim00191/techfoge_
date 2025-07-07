@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import type React from "react"
 import { useCallback, useEffect, useRef, useState } from "react"
 
@@ -530,11 +531,11 @@ export default function ServicesCarousel() {
             <p className="text-[#D1D5DB] text-lg mb-6" style={{ fontFamily: "Poppins, sans-serif" }}>
               Ready to transform your business with cutting-edge technology?
             </p>
+            <Link href={"/contact"}>
             <button
-              className="px-8 py-3 bg-gradient-to-r from-[#00D1FF] to-[#00D1FF]/80 text-[#020A15] font-bold rounded-full hover:shadow-[0_0_30px_#00D1FF80] hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00D1FF] focus:ring-offset-2 focus:ring-offset-[#020A15] animate-float"
+              className="px-8 py-3 bg-gradient-to-r from-[#00D1FF] to-[#00D1FF]/80 text-[#020A15] font-bold outline-none rounded-full hover:shadow-[0_0_30px_#00D1FF80] hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00D1FF] focus:ring-offset-2 focus:ring-offset-[#020A15] animate-float"
               style={{ fontFamily: "Poppins, sans-serif" }}
               onClick={() => {
-                console.log("Get Started clicked")
                 if ("vibrate" in navigator) {
                   navigator.vibrate([100, 50, 100])
                 }
@@ -542,6 +543,7 @@ export default function ServicesCarousel() {
             >
               Get Started Today
             </button>
+            </Link>
           </div>
 
         

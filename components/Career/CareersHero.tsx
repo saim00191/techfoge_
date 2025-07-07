@@ -24,8 +24,8 @@ export const CareersHero = ({ isLoaded }: CareersHeroProps) => {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-xl md:text-2xl lg:text-3xl text-[#D1D5DB] leading-relaxed max-w-4xl mx-auto">
-            Join our innovative team — opportunities are coming soon.
+          <p className="text-xl md:text-2xl lg:text-[28px] text-[#D1D5DB] leading-relaxed max-w-4xl mx-auto">
+            Join our innovative team — many opportunities are coming soon.
           </p>
         </div>
 

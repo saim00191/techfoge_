@@ -21,7 +21,7 @@ const StatsSection = () => {
       icon: Headphones,
     },
     {
-      number: "150+",
+      number: "200+",
       label: "Projects Completed",
       icon: CheckCircle,
     },

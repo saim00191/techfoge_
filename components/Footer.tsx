@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react"
 import {
-  FaRobot,
   FaLinkedin,
   FaTwitter,
   FaInstagram,
@@ -13,6 +12,9 @@ import {
   FaPhone,
 } from "react-icons/fa"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
+import Logo from '@/images/tech-foge.png'
+import Link from "next/link"
 export default function FuturisticFooter() {
 
 
@@ -53,9 +55,9 @@ export default function FuturisticFooter() {
   ]
 
   const quickLinks = [
-    { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Blog", href: "/blog" },
+    { name: "Get a Quote", href: "/quote" },
+    { name: "Technologies", href: "/technologies" },
+    { name: "Blog", href: "/blogs" },
     { name: "FAQs", href: "/faqs" },
   ]
 
@@ -280,10 +282,10 @@ export default function FuturisticFooter() {
 
         <div className="relative max-w-7xl mx-auto">
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 smx:grid-cols-2 lg:grid-cols-5 lgll:grid-cols-6 gap-8 lg:gap-12">
             {/* Company Logo & Tagline - Takes 2 columns on large screens */}
             <div
-              className={`lg:col-span-2 transition-all duration-1000 ease-out ${
+              className={`smx:col-span-2 sm:col-span-1 lg:col-span-2 transition-all duration-1000 ease-out ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: "100ms" }}
@@ -292,10 +294,10 @@ export default function FuturisticFooter() {
                 {/* Logo with Robot Icon */}
                 <div className="flex items-center mb-4 animate-float">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#00D1FF] to-[#00D1FF]/70 rounded-xl flex items-center justify-center mr-4 animate-glow">
-                    <FaRobot className="text-[#020A15] text-2xl" />
+                    <Image src={Logo} alt="TechFoge Logo" className="rounded-xl"/>
                   </div>
                   <h2 className="text-responsive-xl font-bold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>
-                    TechFlow AI
+                  TECH FOGE
                   </h2>
                 </div>
 
@@ -304,8 +306,7 @@ export default function FuturisticFooter() {
                   className="text-[#D1D5DB] text-sm leading-relaxed mb-6"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                 >
-                  Pioneering the future of intelligent automation and digital transformation through cutting-edge AI
-                  solutions.
+                  At Tech Foge, we blend intelligence and innovation to accelerate digital transformation and craft solutions that redefine what's possible.
                 </p>
 
                 {/* Social Media Icons */}
@@ -348,7 +349,7 @@ export default function FuturisticFooter() {
                 Company
               </h3>
               <ul className="space-y-4">
-                {companyInfo.map((item, index) => (
+                {companyInfo.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
@@ -376,7 +377,7 @@ export default function FuturisticFooter() {
                 Quick Links
               </h3>
               <ul className="space-y-4">
-                {quickLinks.map((item, index) => (
+                {quickLinks.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
@@ -409,9 +410,9 @@ export default function FuturisticFooter() {
                 <div className="flex items-start space-x-3 animate-float">
                   <FaMapMarkerAlt className="w-5 h-5 text-[#00D1FF] mt-0.5 flex-shrink-0" />
                   <p className="text-[#D1D5DB] text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>
-                    Silicon Valley Tech Hub
-                    <br />
-                    San Francisco, CA 94105
+                    HYDERABAD SINDH
+                   PAKISTAN <br />
+                 
                   </p>
                 </div>
 
@@ -419,11 +420,11 @@ export default function FuturisticFooter() {
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="w-5 h-5 text-[#00D1FF] flex-shrink-0" />
                   <a
-                    href="mailto:support@techflow.ai"
-                    className="text-[#D1D5DB] hover:text-[#00D1FF] transition-colors duration-300 text-sm hover-slide"
+                    href="mailto:techfoge1@gmail.com"
+                    className="text-[#D1D5DB] hover:text-[#00D1FF] transform group-hover:translate-x-1 transition-all duration-300 text-sm hover-slide"
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    support@techflow.ai
+                    techfoge1@gmail.com
                   </a>
                 </div>
 
@@ -431,11 +432,11 @@ export default function FuturisticFooter() {
                 <div className="flex items-center space-x-3">
                   <FaPhone className="w-5 h-5 text-[#00D1FF] flex-shrink-0" />
                   <a
-                    href="tel:+1234567890"
-                    className="text-[#D1D5DB] hover:text-[#00D1FF] transition-colors duration-300 text-sm hover-slide"
+                    href="tel:+923253848828"
+                    className="text-[#D1D5DB] hover:text-[#00D1FF] transform group-hover:translate-x-1 transition-all duration-300 text-sm hover-slide"
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    +1 (234) 567-8900
+                    +92 325 3848828
                   </a>
                 </div>
               </div>
@@ -443,7 +444,7 @@ export default function FuturisticFooter() {
 
             {/* How to Start CTA */}
             <div
-              className={`transition-all duration-1000 ease-out ${
+              className={`transition-all duration-1000 ease-out w-full ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: "500ms" }}
@@ -457,18 +458,18 @@ export default function FuturisticFooter() {
 
               <div className="bg-gradient-to-br from-[#00D1FF]/15 to-[#00D1FF]/5 border border-[#00D1FF]/30 rounded-2xl p-4 backdrop-blur-sm animate-border-glow">
                 <p
-                  className="text-white text-sm mb-6 font-medium leading-relaxed"
+                  className="text-white text-[12px] mb-6 font-medium leading-relaxed"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                 >
                   Ready to revolutionize your business with AI-powered solutions?
                 </p>
 
+<Link href="/contact" >
                 <button
                   className="hover-glow w-full p-2 bg-gradient-to-r from-[#00D1FF] to-[#00D1FF]/80 text-[#020A15] font-bold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00D1FF] focus:ring-offset-2 focus:ring-offset-[#020A15] animate-glow hover-scale"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                   onClick={() => {
-                    console.log("Get Started clicked")
-                    // Add haptic feedback for mobile
+  
                     if ("vibrate" in navigator) {
                       navigator.vibrate(100)
                     }
@@ -476,6 +477,7 @@ export default function FuturisticFooter() {
                 >
                   Get Started Today
                 </button>
+</Link>
 
                 <p
                   className="text-[#D1D5DB] text-xs mt-3 text-center animate-pulse-custom"
@@ -494,50 +496,19 @@ export default function FuturisticFooter() {
             }`}
             style={{ transitionDelay: "600ms" }}
           >
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="flex  justify-center items-center ">
               {/* Copyright */}
               <div className="flex items-center space-x-4">
                 <p className="text-[#D1D5DB] text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>
-                  © 2024 TechFlow AI. All rights reserved.
+                  © {new Date().getFullYear()} <b>TECHFOGE</b>. All rights reserved.
                 </p>
                 <div className="w-2 h-2 bg-[#00D1FF] rounded-full animate-pulse-custom" />
               </div>
 
-              {/* Legal Links */}
-              <div className="flex flex-wrap justify-center md:justify-end space-x-6">
-                <a
-                  href="/terms"
-                  className="text-[#D1D5DB] hover:text-[#00D1FF] transition-colors duration-300 text-sm hover-slide"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  Terms of Service
-                </a>
-                <a
-                  href="/privacy"
-                  className="text-[#D1D5DB] hover:text-[#00D1FF] transition-colors duration-300 text-sm hover-slide"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href="/cookies"
-                  className="text-[#D1D5DB] hover:text-[#00D1FF] transition-colors duration-300 text-sm hover-slide"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  Cookie Policy
-                </a>
-              </div>
+          
             </div>
 
-            {/* Powered by indicator */}
-            <div className="mt-8 text-center">
-              <p
-                className="text-[#D1D5DB]/60 text-xs animate-pulse-custom"
-                style={{ fontFamily: "Poppins, sans-serif" }}
-              >
-                Powered by Next-Gen AI Technology
-              </p>
-            </div>
+           
           </div>
         </div>
       </footer>

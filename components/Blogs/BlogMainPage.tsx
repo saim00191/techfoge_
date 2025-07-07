@@ -14,7 +14,6 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true)
   const [isLoaded, setIsLoaded] = useState(false)
   const [, setVisibleSections] = useState<Set<string>>(new Set())
-  const [email, setEmail] = useState("")
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
   // Load blogs from Sanity
@@ -76,16 +75,20 @@ export default function BlogPage() {
   // Get latest blogs (remaining published blogs)
   const latestBlogs = blogs.slice(3)
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#020A15] flex items-center justify-center">
-        <div className="text-white text-xl">Loading blogs...</div>
+if (loading) {
+  return (
+    <div className="mt-12 bg-[#020A15] flex items-center justify-center min-h-[300px]">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-[#00D1FF]/30 border-t-[#00D1FF] rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-[#D1D5DB] text-lg">Loading blog...</p>
       </div>
-    )
-  }
+    </div>
+  );
+}
+
 
   return (
-    <div className="min-h-screen bg-[#020A15] text-white font-['Poppins'] relative overflow-hidden">
+    <div className=" bg-[#020A15] text-white py-12 relative overflow-hidden">
       {/* Background Effects */}
       <BackgroundEffects />
 
@@ -103,7 +106,7 @@ export default function BlogPage() {
       <NoBlogsMessage blogs={blogs} loading={loading} />
 
       {/* Newsletter Signup */}
-      <NewsletterSection email={email} setEmail={setEmail} />
+      <NewsletterSection />
 
       {/* Custom styles */}
       <CustomStyles />

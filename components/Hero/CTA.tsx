@@ -2,6 +2,7 @@
 import { Poppins } from "next/font/google"
 import { useState, useEffect, useRef } from "react"
 import { MessageCircle, FileText } from "lucide-react"
+import Link from "next/link"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -89,6 +90,7 @@ export default function MiniContactCTA() {
           }`}
         >
           {/* Primary Button - Request a Quote */}
+          <Link href="/quote">
           <button
  
             className="group relative w-full sm:w-auto bg-[#00D1FF] text-[#020A15] px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,209,255,0.4)] focus:outline-none focus:ring-2 focus:ring-[#00D1FF]/50"
@@ -100,8 +102,10 @@ export default function MiniContactCTA() {
             {/* Button glow effect */}
             <div className="absolute inset-0 rounded-xl bg-[#00D1FF]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
           </button>
+          </Link>
 
           {/* Secondary Button - Contact Us */}
+          <Link href="/contact">
           <button
  
             className="group relative w-full sm:w-auto bg-transparent border-2 border-[#00D1FF] text-[#00D1FF] px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-[#00D1FF]/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,209,255,0.3)] focus:outline-none focus:ring-2 focus:ring-[#00D1FF]/50"
@@ -113,6 +117,7 @@ export default function MiniContactCTA() {
             {/* Button border glow effect */}
             <div className="absolute inset-0 rounded-xl border-2 border-[#00D1FF]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
           </button>
+          </Link>
         </div>
 
         {/* Decorative Elements */}

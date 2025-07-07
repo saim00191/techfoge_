@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const CallToAction = () => {
   return (
@@ -30,6 +31,7 @@ const CallToAction = () => {
           <p className="text-lg text-[#D1D5DB] mb-12 max-w-2xl mx-auto">
             Let&apos;s collaborate to bring your vision to life with cutting-edge technology and innovative solutions.
           </p>
+          <Link href="/contact">
           <motion.button
             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-[#00D1FF] text-[#00D1FF] font-semibold text-lg rounded-full hover:bg-[#00D1FF] hover:text-[#020A15] transition-all duration-500 overflow-hidden"
             whileHover={{ scale: 1.05 }}
@@ -69,6 +71,7 @@ const CallToAction = () => {
               }}
             />
           </motion.button>
+          </Link>
         </motion.div>
       </div>
     </motion.section>
