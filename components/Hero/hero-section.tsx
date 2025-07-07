@@ -41,7 +41,7 @@ export default function ProfessionalHeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lgl:px-8">
+      <div className="relative z-10 container mx-auto px-4 pt-20 sm:px-6 lgl:px-8">
         <div className="py-12 flex items-center">
           <div className="grid grid-cols-1 lgl:grid-cols-12 gap-8 lgl:gap-12 items-center w-full">
             {/* Left Column - Content */}
