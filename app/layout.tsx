@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -110,6 +111,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <head>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "TechFoge",
+              url: "https://techfoge.com",
+              logo: "https://techfoge.com/logo.png", 
+              sameAs: [
+                "https://twitter.com/Tech_Foge",
+                "https://facebook.com/TechFoge",
+                "https://instagram.com/tech_foge",
+                "https://wa.me/923253848828",
+                "https://www.threads.net/@tech_foge",
+                "https://linkedin.com/company/techfoge",
+                "https://tiktok.com/@tech_foge",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+92-325-3848828",
+                contactType: "Customer Support",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={` ${poppins.className}`}>
         <div>
           <Header />
