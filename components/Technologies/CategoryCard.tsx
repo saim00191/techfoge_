@@ -30,7 +30,7 @@ export const CategoryCard = ({
           {/* Enhanced Category Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-[#00D1FF]/10 rounded-xl flex items-center justify-center group-hover:bg-[#00D1FF]/20 group-hover:scale-110 transition-all duration-300">
+              <div className="w-12 h-12 bg-[#00D1FF]/10 rounded-xl hidden smx:flex items-center justify-center group-hover:bg-[#00D1FF]/20 group-hover:scale-110 transition-all duration-300">
                 <IconComponent size={24} className="text-[#00D1FF]" />
               </div>
               <div>
