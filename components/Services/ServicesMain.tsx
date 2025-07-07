@@ -262,14 +262,10 @@ export default function ServicesPageTemplate({
               <p className="text-lg text-[#D1D5DB] max-w-2xl mx-auto">{servicesSubHeading}</p>
             </div>
 
-            {/* Services Cards */}
-<<<<<<< HEAD
-            <div className="grid grid-cols-1 sm:grid-cols-2 mdl:grid-cols-3 gap-8">
-=======
-            <div className="grid grid-cols-1 sm:grid-cols-2 mdl:grid-cols-3 gap-6">
->>>>>>> 9ae1eea0b79a77f75bff6d71bfa5e3e7349bddc9
-              {services.map((service, index) => {
-                return (
+{/* Services Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-2 mdl:grid-cols-3 gap-8">
+  {services.map((service, index) => {
+    return (
                   <div
                     key={index}
                     className={`transition-all duration-700 ease-out ${
