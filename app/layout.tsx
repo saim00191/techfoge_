@@ -143,7 +143,7 @@ export default function RootLayout({
         />
 
         {/* Job Posting */}
-        <Script
+{/*         <Script
           id="job-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -173,10 +173,10 @@ export default function RootLayout({
               }
             })
           }}
-        />
+        /> */}
 
         {/* Contact Page */}
-        <Script
+{/*         <Script
           id="contact-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -204,9 +204,9 @@ export default function RootLayout({
             })
           }}
         />
-
+ */}
         {/* Privacy Policy */}
-        <Script
+{/*         <Script
           id="privacy-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -233,10 +233,10 @@ export default function RootLayout({
               url: "https://techfoge.com/blogs"
             })
           }}
-        />
+        /> */}
 
         {/* Services Page */}
-        <Script
+{/*         <Script
           id="services-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -263,10 +263,10 @@ export default function RootLayout({
               url: "https://techfoge.com/technologies"
             })
           }}
-        />
+        /> */}
 
         {/* Quote Request Page */}
-        <Script
+{/*         <Script
           id="quote-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -278,7 +278,7 @@ export default function RootLayout({
               url: "https://techfoge.com/quote"
             })
           }}
-        />
+        /> */}
 
         {/* WebSite & Search Box */}
         <Script
