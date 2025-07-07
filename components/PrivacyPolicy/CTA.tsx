@@ -1,5 +1,6 @@
 import { Zap, Globe, MessageCircle } from "lucide-react"
 import type { FooterCTAProps } from "@/types/Privacy"
+import Link from "next/link"
 
 export const FooterCTA = ({ visibleSections, sectionRefs }: FooterCTAProps) => {
   return (
