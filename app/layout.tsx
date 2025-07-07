@@ -205,20 +205,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* FAQs Page */}
-        <Script
-          id="faq-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: [] // Add questions and answers as needed
-            })
-          }}
-        />
-
         {/* Privacy Policy */}
         <Script
           id="privacy-jsonld"
