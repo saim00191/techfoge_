@@ -25,7 +25,7 @@ export default function NotFoundPage() {
     return () => clearTimeout(timer)
   }, [])
 
-  const handleGoHome = () => {
+  const handleGoHome: () => void = () => {
     router.push("/")
   }
 
@@ -38,7 +38,7 @@ export default function NotFoundPage() {
   }
 
   return (
-    <div className={`min-h-screen bg-[#020A15] relative overflow-hidden ${poppins.className}`}>
+    <div className={` bg-[#020A15] relative overflow-hidden ${poppins.className}`}>
       {/* Background Circuit Pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 1200 800">
@@ -79,7 +79,7 @@ export default function NotFoundPage() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+      <div className="relative z-10 pt-40 pb-20 flex flex-col items-center justify-center px-4 text-center">
         {/* Animated Robot/Satellite Icon */}
         <div
           className={`mb-8 transition-all duration-1000 ease-out ${
@@ -219,32 +219,7 @@ export default function NotFoundPage() {
           </p>
         </div>
 
-        {/* Search Box */}
-        <div
-          className={`mb-8 w-full max-w-md transition-all duration-1000 ease-out delay-900 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <form onSubmit={handleSearch} className="relative">
-            <div className="relative">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search again..."
-                className="w-full px-6 py-4 bg-transparent border-2 border-[#00D1FF]/30 rounded-xl text-white placeholder-[#D1D5DB]/50 focus:border-[#00D1FF] focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(0,209,255,0.3)]"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-[#00D1FF] hover:text-white transition-colors duration-300"
-              >
-                <Search size={20} />
-              </button>
-            </div>
-            {/* Animated Underline */}
-            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00D1FF] to-transparent transition-all duration-500 focus-within:w-full" />
-          </form>
-        </div>
+       
 
         {/* Return Home Button */}
         <div

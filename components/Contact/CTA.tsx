@@ -1,4 +1,4 @@
-import { Zap, Globe, MessageCircle } from "lucide-react"
+import { Zap,  PhoneCall } from "lucide-react"
 import type { FooterCTAProps } from "@/types/Contact"
 
 export const FooterCTA = ({ visibleSections, sectionRefs }: FooterCTAProps) => {
@@ -23,19 +23,16 @@ export const FooterCTA = ({ visibleSections, sectionRefs }: FooterCTAProps) => {
             <p className="text-lg text-[#D1D5DB] mb-8 max-w-2xl mx-auto">
               Join hundreds of satisfied clients who&apos;ve transformed their ideas into reality with Tech Foge.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#00D1FF] text-[#020A15] px-8 py-3 rounded-lg font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all duration-300">
-                <span className="flex items-center gap-2">
-                  <Globe size={18} />
-                  View Our Work
-                </span>
-              </button>
-              <button className="border-2 border-[#00D1FF] text-[#00D1FF] px-8 py-3 rounded-lg font-bold hover:bg-[#00D1FF]/10 hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-2">
-                  <MessageCircle size={18} />
-                  Schedule a Call
-                </span>
-              </button>
+            <div className="flex flex-row justify-center">
+     
+<a href="tel:+923253848828">
+  <button className="border-2 border-[#00D1FF] text-[#00D1FF] px-8 py-3 rounded-lg font-bold hover:bg-[#00D1FF]/10 hover:scale-105 transition-all duration-300">
+    <span className="flex items-center gap-2">
+      <PhoneCall size={18} />
+      Call Us Now
+    </span>
+  </button>
+</a>
             </div>
           </div>
         </div>

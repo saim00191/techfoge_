@@ -102,25 +102,25 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Office Location",
-      details: ["123 Tech Street", "Silicon Valley, CA 94000"],
+      details: ["HYDERABAD SINDH", "PAKISTAN"],
       color: "#00D1FF",
     },
     {
       icon: Mail,
       title: "Email Support",
-      details: ["hello@techfoge.com", "support@techfoge.com"],
+      details: ["techfoge1@gmail.com","saimamjad198@gmail.com"],
       color: "#00D1FF",
     },
     {
       icon: Phone,
       title: "Phone Support",
-      details: ["+1 (555) 123-4567", "Mon-Fri 9AM-6PM PST"],
+      details: ["+92325-3848828", "Mon-Sun 12:00 PM - 05:00 AM"],
       color: "#00D1FF",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Monday - Friday", "9:00 AM - 6:00 PM PST"],
+      details: ["Monday - Sunday", "12:00 PM - 05:00 AM"],
       color: "#00D1FF",
     },
   ]

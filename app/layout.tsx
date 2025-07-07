@@ -16,13 +16,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   
   title: {
-    default: "TechFoge - AI-Powered Software & Web Solutions",
+    default: "Tech Foge - AI-Powered Software & Web Solutions",
     template: "%s | TechFoge",
   },
   description:
     "TechFoge provides cutting-edge software development, AI solutions, mobile and web apps, IT support, and creative digital services to businesses worldwide.",
   keywords: [
-    "TechFoge",
+    "Tech Foge",
     "AI Solutions",
     "Web Development",
     "Mobile App Development",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TechFoge - Innovative Tech Solutions",
+    title: "Tech Foge - Innovative Tech Solutions",
     description:
       "Discover innovative tech services from TechFoge: AI apps, web & mobile development, IT support, and more.",
     site: "@Tech_Foge",
