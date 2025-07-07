@@ -189,7 +189,7 @@ export default function ProfessionalHeroSection() {
                         </svg>
                       </div>
                       <div className="text-white font-bold text-lg">Innovation</div>
-                      <div className="text-[#D1D5DB] text-sm">Powered by Technology</div>
+                      <div className="text-[#D1D5DB] text-sm">Powered by TECHFOGE</div>
                     </div>
                   </div>
 
