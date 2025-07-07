@@ -46,7 +46,7 @@ export const HeroSection = ({ isLoaded, totalTechnologies, techCategories, avera
             <div className="text-sm md:text-base text-[#D1D5DB]">Avg Proficiency</div>
           </div>
           <div className="bg-[#020A15]/60 backdrop-blur-sm border border-[#00D1FF]/20 rounded-xl p-6 hover:border-[#00D1FF]/50 transition-all duration-300">
-            <div className="text-3xl md:text-4xl font-bold text-[#00D1FF] mb-2">500+</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#00D1FF] mb-2">200+</div>
             <div className="text-sm md:text-base text-[#D1D5DB]">Projects</div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google"
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { Home, Search, Zap } from "lucide-react"
+import { Home, Zap } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 const poppins = Poppins({
@@ -13,7 +13,6 @@ const poppins = Poppins({
 
 export default function NotFoundPage() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
   const router = useRouter()
 
   useEffect(() => {
@@ -29,13 +28,6 @@ export default function NotFoundPage() {
     router.push("/")
   }
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      // Handle search logic here
-      console.log("Searching for:", searchQuery)
-    }
-  }
 
   return (
     <div className={` bg-[#020A15] relative overflow-hidden ${poppins.className}`}>

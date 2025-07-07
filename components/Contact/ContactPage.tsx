@@ -126,7 +126,7 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className={`min-h-screen bg-[#020A15] relative overflow-hidden ${poppins.className}`}>
+    <div className={` bg-[#020A15] relative overflow-hidden ${poppins.className}`}>
       {/* Success Modal */}
       <SuccessModal showSuccess={showSuccess} setShowSuccess={setShowSuccess} />
 

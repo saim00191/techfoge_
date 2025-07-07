@@ -375,7 +375,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   if (loading) {
     return (
-      <div className={`py-10 bg-[#020A15] flex items-center justify-center ${poppins.className}`}>
+      <div className={`py-40 bg-[#020A15] flex items-center justify-center ${poppins.className}`}>
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#00D1FF]/30 border-t-[#00D1FF] rounded-full animate-spin mx-auto mb-4" />
           <p className="text-[#D1D5DB] text-lg">Loading blog post...</p>
@@ -647,82 +647,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </section>
       </main>
 
-      {/* Custom CSS Animations */}
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-15px);
-          }
-        }
-        @keyframes neon-pulse {
-          0%, 100% {
-            opacity: 0.2;
-          }
-          50% {
-            opacity: 0.4;
-          }
-        }
-        @keyframes pulse-glow {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.6;
-            transform: scale(1.1);
-          }
-        }
-        @keyframes pulse-glow-delayed {
-          0%, 100% {
-            opacity: 0.4;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.15);
-          }
-        }
-        @keyframes pulse-glow-slow {
-          0%, 100% {
-            opacity: 0.2;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.5;
-            transform: scale(1.05);
-          }
-        }
-        
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-        .animate-neon-pulse {
-          animation: neon-pulse 3s ease-in-out infinite;
-        }
-        .animate-pulse-glow {
-          animation: pulse-glow 4s ease-in-out infinite;
-        }
-        .animate-pulse-glow-delayed {
-          animation: pulse-glow-delayed 5s ease-in-out infinite 1s;
-        }
-        .animate-pulse-glow-slow {
-          animation: pulse-glow-slow 6s ease-in-out infinite;
-        }
 
-        /* Counter styles for numbered lists */
-        .counter-reset-list {
-          counter-reset: list-counter;
-        }
-        .counter-increment-list {
-          counter-increment: list-counter;
-        }
-        .counter-content::before {
-          content: counter(list-counter);
-        }
-      `}</style>
     </div>
   )
 }
