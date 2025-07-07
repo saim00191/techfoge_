@@ -1,12 +1,10 @@
-import { FaQuestionCircle } from "react-icons/fa"
+
 
 export default function FAQHeader() {
   return (
     <div className="text-center mb-16">
       <div className="inline-flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 bg-gradient-to-br from-[#00D1FF] to-[#00D1FF]/70 rounded-xl flex items-center justify-center">
-          <FaQuestionCircle className="text-[#020A15] text-xl" />
-        </div>
+     
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Frequently Asked Questions</h1>
       </div>
       <p className="text-lg md:text-xl text-[#D1D5DB] leading-relaxed max-w-3xl mx-auto">
