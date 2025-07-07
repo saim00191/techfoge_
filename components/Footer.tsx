@@ -306,7 +306,7 @@ export default function FuturisticFooter() {
                   className="text-[#D1D5DB] text-sm leading-relaxed mb-6"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                 >
-                  At Tech Foge, we blend intelligence and innovation to accelerate digital transformation and craft solutions that redefine what's possible.
+                  At Tech Foge, we blend intelligence and innovation to accelerate digital transformation and craft solutions that redefine what&apos;s possible.
                 </p>
 
                 {/* Social Media Icons */}
