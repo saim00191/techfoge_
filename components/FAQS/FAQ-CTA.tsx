@@ -8,7 +8,7 @@ export default function FAQCTA() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Still have questions?</h2>
           <p className="text-[#D1D5DB] mb-8 text-lg leading-relaxed">
-            Can't find the answer you're looking for? Our team is here to help you with any questions about our
+            Can&apos;t find the answer you&apos;re looking for? Our team is here to help you with any questions about our
             services.
           </p>
           <Link

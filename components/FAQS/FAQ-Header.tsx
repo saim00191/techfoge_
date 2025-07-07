@@ -10,7 +10,7 @@ export default function FAQHeader() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Frequently Asked Questions</h1>
       </div>
       <p className="text-lg md:text-xl text-[#D1D5DB] leading-relaxed max-w-3xl mx-auto">
-        Find answers to common queries about Tech Foge's services, processes, and support.
+        Find answers to common queries about Tech Foge&apos;s services, processes, and support.
       </p>
 
       {/* Decorative Line */}
