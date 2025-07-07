@@ -184,7 +184,6 @@ export default function IndustriesInfiniteCarouselFixed() {
 
         {/* Infinite Carousel Container */}
 
-        
         <div className="carousel-container relative max-w-6xl mx-auto">
           <div className="h-[450px] overflow-hidden rounded-2xl">
             {/* Desktop: 4 columns */}
