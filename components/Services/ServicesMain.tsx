@@ -178,7 +178,7 @@ export default function ServicesPageTemplate({
       <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-[#00D1FF]/8 rounded-full blur-3xl animate-pulse-glow-slow" />
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4">
+      <section className="relative z-10 pt-40 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           {/* Main Heading */}
           <div
@@ -263,7 +263,7 @@ export default function ServicesPageTemplate({
             </div>
 
             {/* Services Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 mdl:grid-cols-3 gap-6">
               {services.map((service, index) => {
                 return (
                   <div
@@ -615,9 +615,9 @@ export default function ServicesPageTemplate({
               visibleSections.has("finalCta") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="relative bg-gradient-to-br from-[#00D1FF]/10 via-[#020A15]/80 to-[#00D1FF]/10 rounded-2xl p-12 border border-[#00D1FF]/20">
+            <div className="relative bg-gradient-to-br from-[#00D1FF]/10 via-[#020A15]/80 to-[#00D1FF]/10 rounded-2xl px-5 py-12 border border-[#00D1FF]/20">
               <div className="flex items-center justify-center gap-3 mb-6">
-                <Rocket size={32} className="text-[#00D1FF]" />
+                <Rocket size={32} className="text-[#00D1FF] hidden sm:block" />
                 <h3 className="text-3xl md:text-4xl font-bold text-white">{finalCtaHeading}</h3>
               </div>
               <p className="text-lg text-[#D1D5DB] mb-8 max-w-2xl mx-auto">{finalCtaDescription}</p>
