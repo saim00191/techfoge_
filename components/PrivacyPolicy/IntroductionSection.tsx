@@ -19,7 +19,7 @@ export const IntroductionSection = ({ visibleSections, sectionRefs }: Introducti
             <div className="absolute inset-0 bg-gradient-to-br from-[#00D1FF]/5 via-transparent to-[#00D1FF]/5 rounded-2xl blur-xl" />
             <div className="relative bg-[#020A15]/80 backdrop-blur-sm border border-[#00D1FF]/20 rounded-2xl p-8 md:p-12">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#00D1FF]/10 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#00D1FF]/10 rounded-full xsm:flex hidden items-center justify-center">
                   <AlertTriangle size={24} className="text-[#00D1FF]" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">Important Notice</h2>
