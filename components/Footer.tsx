@@ -314,7 +314,7 @@ export default function FuturisticFooter() {
                 </p>
 
                 {/* Social Media Icons */}
-                <div className="flex space-x-4">
+                <div className="flex space-x-2 xms:space-x-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon
                     return (
