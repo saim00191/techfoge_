@@ -284,10 +284,10 @@ export default function FuturisticFooter() {
 
         <div className="relative max-w-7xl mx-auto">
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 smx:grid-cols-2 lg:grid-cols-5 lgll:grid-cols-6 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 lgll:grid-cols-6 gap-8 lg:gap-12">
             {/* Company Logo & Tagline - Takes 2 columns on large screens */}
             <div
-              className={`smx:col-span-2 sm:col-span-1 lg:col-span-2 transition-all duration-1000 ease-out ${
+              className={`md:col-span-1 lg:col-span-2 transition-all duration-1000 ease-out ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: "100ms" }}
