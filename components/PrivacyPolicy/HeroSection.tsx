@@ -3,7 +3,7 @@ import type { HeroSectionProps } from "@/types/Privacy"
 
 export const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   return (
-    <section className="relative z-10 pt-20 pb-16 px-4">
+    <section className="relative z-10 pt-40 pb-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
         {/* Main Heading */}
         <div
@@ -38,7 +38,7 @@ export const HeroSection = ({ isLoaded }: HeroSectionProps) => {
         >
           <div className="inline-flex items-center gap-2 bg-[#00D1FF]/10 border border-[#00D1FF]/20 rounded-full px-6 py-3">
             <CheckCircle size={18} className="text-[#00D1FF]" />
-            <span className="text-[#D1D5DB] text-sm">Last updated: January 2024</span>
+            <span className="text-[#D1D5DB] text-sm">Last updated: July 2025</span>
           </div>
         </div>
 

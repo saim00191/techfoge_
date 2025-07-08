@@ -295,9 +295,11 @@ export default function FuturisticFooter() {
               <div className="mb-8">
                 {/* Logo with Robot Icon */}
                 <div className="flex items-center mb-4 animate-float">
+                  <Link href={"/"}>
                   <div className="w-12 h-12 bg-gradient-to-br from-[#00D1FF] to-[#00D1FF]/70 rounded-xl flex items-center justify-center mr-4 animate-glow">
                     <Image src={Logo} alt="TechFoge Logo" className="rounded-xl"/>
                   </div>
+                  </Link>
                   <h2 className="text-responsive-xl font-bold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>
                   TECH FOGE
                   </h2>

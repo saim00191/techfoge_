@@ -151,7 +151,9 @@ export default function Header() {
       <div className={`bg-[#020A15] ${poppins.className}`}>
         <div className="text-white container flex items-center justify-between py-2 px-4 relative z-50">
           {/* Logo */}
+          <Link href={"/"}>
           <Image src={Logo || "/placeholder.svg"} alt="Logo" className="h-24 w-[140px]" />
+          </Link>
 
           {/* Desktop Nav */}
           <ul className="hidden mdl:flex items-center mdl:gap-4 mdll:gap-6 text-[16px] font-medium">

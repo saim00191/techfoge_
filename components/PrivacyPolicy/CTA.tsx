@@ -1,5 +1,6 @@
 import { Zap, Globe, MessageCircle } from "lucide-react"
 import type { FooterCTAProps } from "@/types/Privacy"
+import Link from "next/link"
 
 export const FooterCTA = ({ visibleSections, sectionRefs }: FooterCTAProps) => {
   return (
@@ -23,19 +24,15 @@ export const FooterCTA = ({ visibleSections, sectionRefs }: FooterCTAProps) => {
             <p className="text-lg text-[#D1D5DB] mb-8 max-w-2xl mx-auto">
               Now that you understand how we protect your privacy, let &apos;s discuss your next project.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#00D1FF] text-[#020A15] px-8 py-3 rounded-lg font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all duration-300">
-                <span className="flex items-center gap-2">
-                  <Globe size={18} />
-                  View Our Work
-                </span>
-              </button>
+            <div className="flex  justify-center">
+             <Link href="/contact">
               <button className="border-2 border-[#00D1FF] text-[#00D1FF] px-8 py-3 rounded-lg font-bold hover:bg-[#00D1FF]/10 hover:scale-105 transition-all duration-300">
                 <span className="flex items-center gap-2">
                   <MessageCircle size={18} />
                   Contact Us
                 </span>
               </button>
+             </Link>
             </div>
           </div>
         </div>

@@ -406,7 +406,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   if (loading) {
     return (
-      <div className={`py-20 sm:py-40 bg-[#020A15] flex items-center justify-center ${poppins.className}`}>
+      <div className={`py-40  bg-[#020A15] flex items-center justify-center ${poppins.className}`}>
         <div className="text-center">
           <div className="w-12 h-12 sm:w-16 sm:h-16 border-4 border-[#00D1FF]/30 border-t-[#00D1FF] rounded-full animate-spin mx-auto mb-4" />
           <p className="text-[#D1D5DB] text-base sm:text-lg">Loading blog post...</p>
