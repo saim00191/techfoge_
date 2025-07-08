@@ -21,7 +21,6 @@ export const metadata: Metadata = {
       },
     ],
     locale: "en_US",
-    type: "blog",
   },
   alternates: {
     canonical: "https://techfoge.com/blogs",
