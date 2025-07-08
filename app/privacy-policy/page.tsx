@@ -3,6 +3,46 @@
 
 import PrivacyPolicyPage from '@/components/PrivacyPolicy/MainPage'
 import React from 'react'
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Your Data, Our Responsibility",
+  description:
+    "Review our privacy policy to understand how we collect, use, and protect your personal information when you interact with our website and services.",
+  keywords: [
+    "Privacy Policy",
+    "Data Protection",
+    "Information Security",
+    "User Data",
+    "GDPR",
+    "Data Collection",
+    "Cookies Policy",
+    "Confidentiality",
+    "Terms of Use",
+    "Online Privacy"
+  ],
+  openGraph: {
+    title: "Privacy Policy | Your Data, Our Responsibility",
+    description:
+      "We value your privacy. Read our Privacy Policy to see how we handle your data with integrity and security.",
+    url: "https://techfoge.com/privacy-policy",
+    siteName: "TechFoge",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Your Data, Our Responsibility",
+    description:
+      "Read our Privacy Policy to learn how we protect your personal information and ensure secure digital experiences.",
+    site: "@Tech_Foge",
+    creator: "@Tech_Foge",
+  },
+  alternates: {
+    canonical: "https://techfoge.com/privacy-policy",
+  },
+  metadataBase: new URL("https://techfoge.com"),
+}
 
 const Home = () => {
   return (
