@@ -1,53 +1,55 @@
 import WebDevelopmentServices from '@/components/Services/web-development'
 import React from 'react'
 
-import type { Metadata } from "next"
+
 export const metadata: Metadata = {
-  title: "Web Development Agency",
+  title: "Web Development Services | Custom Websites by TechFoge",
   description:
-    "Discover custom web development services by TechFoge — responsive, fast, and SEO-optimized websites built using cutting-edge technologies like React, Next.js, and more.",
+    "Boost your digital presence with custom web development services by TechFoge. We build responsive, fast, and scalable websites tailored to your business needs.",
   keywords: [
-    "Web Development",
-    "Custom Website Development",
-    "Next.js Web Apps",
+    "Web Development Services",
+    "Custom Websites",
+    "Next.js Development",
+    "React Web Development",
     "Frontend Development",
     "Backend Development",
     "Full Stack Development",
-    "Web App Development",
-    "React Development",
-    "Business Website",
-    "TechFoge Web Solutions",
+    "Business Website Development",
+    "Responsive Web Design",
+    "TechFoge Web Services"
   ],
   openGraph: {
-    title: "Web Development Services | TechFoge",
+    title: "Custom Web Development Services",
     description:
-      "TechFoge offers scalable and high-performance web development solutions tailored to your business. Let's build your online presence today.",
-    url: "https://techfoge.com/web-development",
+      "We design and develop high-performance websites using modern technologies like React, Next.js, and Tailwind CSS to help businesses succeed online.",
+    url: "https://techfoge.com/services/web-development",
     siteName: "TechFoge",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://techfoge.com/og-web-development.png", // Replace with actual image
+        url: "https://techfoge.com/images/web-development.png", // Make sure this exists in /public/images/
         width: 1200,
         height: 630,
-        alt: "Web Development - TechFoge",
+        alt: "Web Development by TechFoge",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development Services | TechFoge",
+    title: "Web Development Experts",
     description:
-      "Build responsive and high-performing websites with TechFoge's expert web development team.",
+      "Get professional web development services with modern tools like Next.js, React, and Tailwind. Custom websites that drive business growth.",
     site: "@Tech_Foge",
     creator: "@Tech_Foge",
-    images: ["https://techfoge.com/og-web-development.png"], // Replace with actual image
+    images: ["https://techfoge.com/images/web-development.png"],
   },
   alternates: {
-    canonical: "https://techfoge.com/web-development",
+    canonical: "https://techfoge.com/services/web-development",
   },
+  metadataBase: new URL("https://techfoge.com"),
 }
+
 
 
 
