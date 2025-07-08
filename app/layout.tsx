@@ -12,8 +12,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 // app/layout.tsx or app/metadata.ts
 
-<meta name="robots" content="noindex">
-
 
 export const metadata: Metadata = {
   
