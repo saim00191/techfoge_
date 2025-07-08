@@ -154,6 +154,8 @@ export default function RootLayout({
         />
       </head>
       <body className={` ${poppins.className}`}>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNSBJ6MV"
+height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
         <div>
           <Header />
           {children}
