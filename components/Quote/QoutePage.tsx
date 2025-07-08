@@ -28,20 +28,33 @@ export default function GetQuotePage() {
   const [showSuccess, setShowSuccess] = useState(false)
   const [showSupport, setShowSupport] = useState(false)
 
-  const projectTypes: SelectOption[] = [
-    { value: "web-development", label: "Web Development" },
-    { value: "mobile-app", label: "Mobile App" },
-    { value: "ui-ux-design", label: "UI/UX Design" },
-    { value: "consulting", label: "Tech Consulting" },
-    { value: "other", label: "Other" },
-  ]
+  const projectTypes: SelectOption[] =  [
+  { label: 'Software Development', value: 'software-development' },
+  { label: 'Web Development', value: 'web-development' },
+  { label: 'Mobile App Development', value: 'mobile-app-development' },
+  { label: 'WordPress Development', value: 'wordpress-development' },
+  { label: 'E-Commerce Solutions', value: 'ecommerce-solutions' },
+  { label: 'SEO Optimization', value: 'seo-optimization' },
+  { label: 'Graphic Designing', value: 'graphic-designing' },
+  { label: 'Video Editing', value: 'video-editing' },
+  { label: 'AI & Machine Learning', value: 'ai-ml' },
+  { label: 'Technical Support', value: 'technical-support' },
+  { label: 'UI/UX Design', value: 'ui-ux-design' },
+  { label: 'Tech Consulting', value: 'consulting' },
+  { label: 'Other', value: 'other' },
+]
 
-  const budgetRanges: SelectOption[] = [
-    { value: "5k-10k", label: "$5,000 - $10,000" },
-    { value: "10k-25k", label: "$10,000 - $25,000" },
-    { value: "25k-50k", label: "$25,000 - $50,000" },
-    { value: "50k+", label: "$50,000+" },
-  ]
+ const budgetRanges: SelectOption[] = [
+  { label: '$300 - $500', value: '300-500' },
+  { label: '$500 - $1,000', value: '500-1000' },
+  { label: '$1,000 - $2,000', value: '1000-2000' },
+  { label: '$2,000 - $5,000', value: '2000-5000' },
+  { label: '$5,000 - $10,000', value: '5000-10000' },
+  { label: '$10,000 - $20,000', value: '10000-20000' },
+  { label: '$20,000 - $30,000', value: '20000-30000' },
+  { label: '$30,000 - $50,000', value: '30000-50000' },
+  { label: '$50,000+', value: '50000+' }
+]
 
   const features: Feature[] = [
     {

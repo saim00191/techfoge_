@@ -1,32 +1,9 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import { client } from "@/sanity/lib/client"
 import PageHeader from "../components/PageHeader"
 import Card from "../components/Card"
-import {
-  Quote,
-  User,
-  Mail,
-  Phone,
-  Building,
-  DollarSign,
-  Calendar,
-  Search,
-  Trash2,
-} from "lucide-react"
-
-interface Quote {
-  id: number
-  fullName: string
-  email: string
-  phone: string
-  company: string
-  servicesNeeded: string[]
-  budget: string
-  message: string
-  date: string
-}
+import { User, Mail, Phone, Building, DollarSign, Calendar, Search, Trash2 } from "lucide-react"
 
 interface SanityQuote {
   _id: string
@@ -40,14 +17,14 @@ interface SanityQuote {
   submittedAt: string
 }
 
-
 export default function QuotesPage() {
-  const [quotes, setQuotes] = useState<Quote[]>([])
+  const [quotes, setQuotes] = useState<any[]>([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [isDeleting, setIsDeleting] = useState<number | null>(null)
 
   useEffect(() => {
     const fetchQuotes = async () => {
-      const data : SanityQuote[] = await client.fetch(`*[_type == "quoteRequest"] | order(submittedAt desc){
+      const data: SanityQuote[] = await client.fetch(`*[_type == "quoteRequest"] | order(submittedAt desc){
         _id,
         name,
         email,
@@ -58,9 +35,9 @@ export default function QuotesPage() {
         message,
         submittedAt
       }`)
-
-      const formatted : Quote[] = data.map((q, index) => ({
+      const formatted = data.map((q, index) => ({
         id: index + 1,
+        sanityId: q._id, // Store the Sanity document ID
         fullName: q.name,
         email: q.email,
         phone: q.phone,
@@ -70,10 +47,8 @@ export default function QuotesPage() {
         message: q.message,
         date: q.submittedAt,
       }))
-
       setQuotes(formatted)
     }
-
     fetchQuotes()
   }, [])
 
@@ -83,13 +58,32 @@ export default function QuotesPage() {
       quote.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
       quote.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       quote.message.toLowerCase().includes(searchTerm.toLowerCase())
-
     return matchesSearch
   })
 
-  const handleDelete = (id: number) => {
+  const handleDelete = async (id: number) => {
     if (confirm("Are you sure you want to delete this quote request?")) {
-      setQuotes((prev) => prev.filter((quote) => quote.id !== id))
+      setIsDeleting(id)
+      try {
+        // Find the quote to get its Sanity ID
+        const quoteToDelete = quotes.find((quote) => quote.id === id)
+        if (!quoteToDelete) {
+          throw new Error("Quote not found")
+        }
+
+        // Delete from Sanity
+        await client.delete(quoteToDelete.sanityId)
+
+        // Remove from local state after successful deletion from Sanity
+        setQuotes((prev) => prev.filter((quote) => quote.id !== id))
+
+        console.log("Quote deleted successfully")
+      } catch (error) {
+        console.error("Error deleting quote:", error)
+        alert("Failed to delete quote. Please try again.")
+      } finally {
+        setIsDeleting(null)
+      }
     }
   }
 
@@ -110,10 +104,8 @@ export default function QuotesPage() {
           <rect width="100%" height="100%" fill="url(#circuit)" />
         </svg>
       </div>
-
       <div className="relative z-10 p-6">
         <PageHeader title="Quote Requests" description="Manage project quotes and client proposals." />
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card>
             <div className="flex items-center justify-between">
@@ -122,12 +114,11 @@ export default function QuotesPage() {
                 <p className="text-2xl font-bold text-white mt-1">{stats.total}</p>
               </div>
               <div className="w-12 h-12 bg-[#00D1FF]/20 rounded-full flex items-center justify-center">
-                <Quote size={24} className="text-[#00D1FF]" />
+                <Trash2 size={24} className="text-[#00D1FF]" />
               </div>
             </div>
           </Card>
         </div>
-
         <Card className="mb-8">
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1">
@@ -144,7 +135,6 @@ export default function QuotesPage() {
             </div>
           </div>
         </Card>
-
         <div className="space-y-6">
           {filteredQuotes.map((quote, index) => (
             <Card key={quote.id} className="animate-slide-in-up">
@@ -164,7 +154,6 @@ export default function QuotesPage() {
                       </div>
                     </div>
                   </div>
-
                   <div className="mb-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div className="flex items-center gap-2 text-sm text-[#D1D5DB]">
@@ -184,7 +173,6 @@ export default function QuotesPage() {
                         {new Date(quote.date).toLocaleString()}
                       </div>
                     </div>
-
                     <div className="mb-4">
                       <h4 className="text-white font-semibold mb-2">Services Needed:</h4>
                       <div className="flex flex-wrap gap-2">
@@ -198,20 +186,19 @@ export default function QuotesPage() {
                         ))}
                       </div>
                     </div>
-
                     <div className="mb-4">
                       <h4 className="text-white font-semibold mb-2">Message:</h4>
                       <p className="text-[#D1D5DB] leading-relaxed">{quote.message}</p>
                     </div>
                   </div>
-
                   <div className="flex flex-wrap gap-2">
                     <button
                       onClick={() => handleDelete(quote.id)}
-                      className="px-4 py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors duration-300 flex items-center gap-2"
+                      disabled={isDeleting === quote.id}
+                      className="px-4 py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors duration-300 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Trash2 size={16} />
-                      Delete
+                      {isDeleting === quote.id ? "Deleting..." : "Delete"}
                     </button>
                   </div>
                 </div>
@@ -219,10 +206,9 @@ export default function QuotesPage() {
             </Card>
           ))}
         </div>
-
         {filteredQuotes.length === 0 && (
           <Card className="text-center py-12">
-            <Quote size={48} className="text-[#D1D5DB] mx-auto mb-4" />
+            <Trash2 size={48} className="text-[#D1D5DB] mx-auto mb-4" />
             <h3 className="text-white text-xl font-semibold mb-2">No Quote Requests Found</h3>
             <p className="text-[#D1D5DB]">Try adjusting your search or filter criteria.</p>
           </Card>

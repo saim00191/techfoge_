@@ -1,18 +1,9 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import { client } from "@/sanity/lib/client"
 import PageHeader from "../components/PageHeader"
 import Card from "../components/Card"
-import {
-  MessageSquare,
-  User,
-  Mail,
-  Phone,
-  Calendar,
-  Search,
-  Trash2,
-} from "lucide-react"
+import { MessageSquare, User, Phone, Calendar, Search, Trash2 } from "lucide-react"
 
 interface ContactMessage {
   id: string
@@ -37,6 +28,7 @@ interface SanityContact {
 export default function ContactsPage() {
   const [messages, setMessages] = useState<ContactMessage[]>([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [isDeleting, setIsDeleting] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -49,7 +41,6 @@ export default function ContactsPage() {
         message,
         date
       }`)
-
       const mapped = data.map((item: SanityContact) => ({
         id: item._id,
         fullName: item.name,
@@ -59,10 +50,8 @@ export default function ContactsPage() {
         message: item.message,
         date: item.date,
       }))
-
       setMessages(mapped)
     }
-
     fetchMessages()
   }, [])
 
@@ -70,12 +59,26 @@ export default function ContactsPage() {
     [message.fullName, message.email, message.subject, message.message]
       .join(" ")
       .toLowerCase()
-      .includes(searchTerm.toLowerCase())
+      .includes(searchTerm.toLowerCase()),
   )
 
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this message?")) {
-      setMessages((prev) => prev.filter((msg) => msg.id !== id))
+      setIsDeleting(id)
+      try {
+        // Delete from Sanity
+        await client.delete(id)
+
+        // Remove from local state after successful deletion from Sanity
+        setMessages((prev) => prev.filter((msg) => msg.id !== id))
+
+        console.log("Contact message deleted successfully")
+      } catch (error) {
+        console.error("Error deleting contact message:", error)
+        alert("Failed to delete message. Please try again.")
+      } finally {
+        setIsDeleting(null)
+      }
     }
   }
 
@@ -92,10 +95,8 @@ export default function ContactsPage() {
           <rect width="100%" height="100%" fill="url(#circuit)" />
         </svg>
       </div>
-
       <div className="relative z-10 p-6">
         <PageHeader title="Contact Messages" description="Manage and respond to customer inquiries and messages." />
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card>
             <div className="flex items-center justify-between">
@@ -109,7 +110,6 @@ export default function ContactsPage() {
             </div>
           </Card>
         </div>
-
         <Card className="mb-8">
           <div className="relative">
             <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#D1D5DB]" />
@@ -122,7 +122,6 @@ export default function ContactsPage() {
             />
           </div>
         </Card>
-
         <div className="space-y-6">
           {filteredMessages.map((message) => (
             <Card key={message.id} className="animate-slide-in-up">
@@ -139,11 +138,9 @@ export default function ContactsPage() {
                       </div>
                     </div>
                   </div>
-
                   <div className="mb-4">
                     <h4 className="text-white font-semibold text-lg mb-2">{message.subject}</h4>
                     <p className="text-[#D1D5DB] leading-relaxed mb-4">{message.message}</p>
-
                     <div className="flex items-center gap-4 text-sm text-[#D1D5DB]">
                       <div className="flex items-center gap-1">
                         <Phone size={14} />
@@ -155,14 +152,14 @@ export default function ContactsPage() {
                       </div>
                     </div>
                   </div>
-
                   <div className="flex flex-wrap gap-2">
                     <button
                       onClick={() => handleDelete(message.id)}
-                      className="px-4 py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors duration-300 flex items-center gap-2"
+                      disabled={isDeleting === message.id}
+                      className="px-4 py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors duration-300 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Trash2 size={16} />
-                      Delete
+                      {isDeleting === message.id ? "Deleting..." : "Delete"}
                     </button>
                   </div>
                 </div>
@@ -170,7 +167,6 @@ export default function ContactsPage() {
             </Card>
           ))}
         </div>
-
         {filteredMessages.length === 0 && (
           <Card className="text-center py-12">
             <MessageSquare size={48} className="text-[#D1D5DB] mx-auto mb-4" />

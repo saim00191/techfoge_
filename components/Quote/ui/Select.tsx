@@ -17,30 +17,36 @@ export const Select = ({ label, options = [], className = "", error = "", ...pro
         onBlur={() => setFocused(false)}
         {...props}
       >
-        <option value="" className="bg-slate-800">
-          Select {label}
-        </option>
-        {options.map((option, index) => (
-          <option key={index} value={option.value} className="bg-slate-800">
-            {option.label}
-          </option>
-        ))}
+      <option
+  value=""
+  disabled
+  aria-hidden="true"
+  className="bg-slate-800 hidden-option"
+>
+  Select {label}
+</option>
+{options.map((option, index) => (
+  <option key={index} value={option.value} className="bg-slate-800">
+    {option.label}
+  </option>
+))}
+
       </select>
-      {label && (
-        <label
-          className={`absolute left-4 transition-all duration-300 pointer-events-none ${
-            focused || props.value ? "-top-2 text-xs text-[#00D1FF] bg-[#020A15] px-2" : "top-3 text-slate-400"
-          }`}
-        >
-          {label}
-        </label>
-      )}
+
+   
       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
         <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
+
       {error && <p className="text-red-400 text-sm mt-1">{error}</p>}
     </div>
   )
 }
+
+  <style jsx>{`
+        select option.hidden-option {
+          display: none;
+        }
+      `}</style>

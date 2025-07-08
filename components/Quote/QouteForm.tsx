@@ -62,7 +62,7 @@ export const QuoteForm = ({
 
         <div className="grid md:grid-cols-2 gap-4">
           <Select
-            label="Project Type"
+
             name="projectType"
             value={formData.projectType}
             onChange={handleInputChange}
@@ -72,7 +72,6 @@ export const QuoteForm = ({
           />
 
           <Select
-            label="Budget Range"
             name="budget"
             value={formData.budget}
             onChange={handleInputChange}
