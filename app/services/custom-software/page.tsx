@@ -1,8 +1,7 @@
 import CustomSoftwareDevelopment from '@/components/Services/custom-software'
 import React from 'react'
-
-
 import type { Metadata } from "next"
+
 
 export const metadata: Metadata = {
   title: "Custom Software Development",
@@ -50,8 +49,6 @@ export const metadata: Metadata = {
     canonical: "https://techfoge.com/services/custom-software",
   },
 }
-
-
 const Home = () => {
   return (
     <div>
