@@ -151,7 +151,7 @@ export default function Header() {
       <div className={`bg-[#020A15] ${poppins.className}`}>
         <div className="text-white container flex items-center justify-between py-2 px-4 relative z-50">
           {/* Logo */}
-        <Link href={"/"}>
+          <Link href={"/"}>
           <Image src={Logo || "/placeholder.svg"} alt="Logo" className="h-24 w-[140px]" />
           </Link>
 
@@ -234,16 +234,7 @@ export default function Header() {
                         })}
                       </div>
 
-                      {/* Call to Action */}
-                      <div className="mt-4 pt-4 border-t border-[#00D1FF]/20">
-                        <Link
-                          href="/services"
-                          className="block w-full text-center py-2 px-4 bg-gradient-to-r from-[#00D1FF]/20 to-[#005377]/20 hover:from-[#00D1FF]/30 hover:to-[#005377]/30 text-[#00D1FF] font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D1FF]/20"
-                          onClick={() => setIsServicesOpen(false)}
-                        >
-                          View All Services →
-                        </Link>
-                      </div>
+                  
                     </div>
                   </div>
                 )}
