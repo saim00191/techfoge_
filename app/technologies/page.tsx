@@ -2,6 +2,46 @@
 
 import TechnologiesPage from '@/components/Technologies/TechnologiesMainPage'
 import React from 'react'
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Technologies We Use | Modern Tech Stack Experts",
+  description:
+    "Explore the cutting-edge technologies and tools used by our team, including React, Next.js, Node.js, AI, Tailwind CSS, Sanity CMS, and more to deliver robust digital solutions.",
+  keywords: [
+    "Web Development Tools",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Sanity CMS",
+    "Tailwind CSS",
+    "AI & Machine Learning",
+    "Frontend Development",
+    "Backend Development",
+    "Full Stack Technologies"
+  ],
+  openGraph: {
+    title: "Technologies We Use | Modern Tech Stack Experts",
+    description:
+      "We leverage modern technologies like React, AI, Next.js, and Tailwind CSS to craft efficient and scalable digital products.",
+    url: "https://techfoge.com/technologies",
+    siteName: "TechFoge",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Technologies We Use | Modern Tech Stack Experts",
+    description:
+      "Discover the tech stack behind our digital success—React, Next.js, Tailwind, AI, and more.",
+    site: "@Tech_Foge",
+    creator: "@Tech_Foge",
+  },
+  alternates: {
+    canonical: "https://techfoge.com/technologies",
+  },
+  metadataBase: new URL("https://techfoge.com"),
+}
 
 const Home = () => {
   return (
