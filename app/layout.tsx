@@ -73,7 +73,7 @@ export const metadata: Metadata = {
       "Discover innovative tech services from TechFoge: AI apps, web & mobile development, IT support, and more.",
     site: "@Tech_Foge",
     creator: "@Tech_Foge",
-    images: ["https://techfoge.com/twitter-card.jpg"],
+    images: ["https://techfoge.com/og-image.png"],
   },
   icons: {
     icon: "/favicon.ico",
