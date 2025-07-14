@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/dashboard", "/api/"], // Block sensitive or backend routes
+        disallow: "/admin", 
       },
     ],
     sitemap: "https://techfoge.com/sitemap.xml",
