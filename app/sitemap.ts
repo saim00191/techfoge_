@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://techfoge.com"
   const lastModified = new Date().toISOString()
 
-  // Static main pages
+  // Static pages
   const staticRoutes = [
     "/",
     "/about",
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blogs",
   ]
 
-  // Service pages
+  // Services pages
   const serviceRoutes = [
     "/services/web-development",
     "/services/mobile-development",
@@ -37,5 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified,
+    changeFrequency: "monthly",
+    priority: route === "/" ? 1.0 : 0.8,
   }))
 }
